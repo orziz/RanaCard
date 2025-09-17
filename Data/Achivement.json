@@ -1,0 +1,257 @@
+[
+  {
+    "ID": "ACH_CEO",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Pass",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_PassDiff5",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_PassMax",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_GoldenNeedle",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_NoDerivative",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_500Derivative",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_1000Derivative",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_2000Derivative",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Harvest500",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_30MIN",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_20MIN",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_FirstBossYear",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_FirstBossRound",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_RabbitSwarm",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Panda",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_100Egg",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_100Mineral",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_15Spell",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_99TempLimit",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Health1",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_300Dew",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_10Rice",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Mushroom30",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_200TimeExplode",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_BoomGrass100Income",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_NeverExplode",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_OnlyWhitePendant",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Owe200",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_100SubHealth",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_100ExcessHealth",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_50TimesSubHealth",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Sractch100",
+    "UnlockBySteamStatus": "true",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_SractchEarn500",
+    "UnlockBySteamStatus": "true",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Shop500",
+    "UnlockBySteamStatus": "true",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Shop1000",
+    "UnlockBySteamStatus": "true",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Miasma",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Meteorite",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Twilight",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Adrenaline",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Machine",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Slime",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Prison",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Stone",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Sour",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_DayNight",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Rabbit",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_Golden",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_AllBoss",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_GoldenBag",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_ForeseePass",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  }
+]

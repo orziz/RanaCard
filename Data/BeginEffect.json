@@ -1,0 +1,114 @@
+[
+  {
+    "ID": "FirstNoKPI",
+    "EffectDescription": "第一年免除KPI",
+    "EffectString": "NextYear(Global,None,KPIMultiplier,-1:1)",
+    "UnLocked": 0,
+    "UnlockCondition": "通关一次游戏",
+    "StarCount": 0
+  },
+  {
+    "ID": "CardPack",
+    "EffectDescription": "开一个白色卡包",
+    "EffectString": "OpenPack(Card;Small;1)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 3
+  },
+  {
+    "ID": "PendantPack",
+    "EffectDescription": "开一个白色挂件包",
+    "EffectString": "OpenPack(Pendant;Small;1)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 3
+  },
+  {
+    "ID": "HealthLimit6",
+    "EffectDescription": "+6最大<sprite=0>",
+    "EffectString": "Global,HealthLimit,6",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 5
+  },
+  {
+    "ID": "DisasterKPISub5",
+    "EffectDescription": "灾年与大灾变KPI-5%",
+    "EffectString": "Global,WholeGameKPIDisasterMultiplier,=0.95",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 8
+  },
+  {
+    "ID": "KPIAdd10DisasterKPISub20",
+    "EffectDescription": "全局游戏KPI+10%；灾年与大灾变KPI-20%",
+    "EffectString": "Global,WholeGameKPIMultiplier,=1.1 # Global,WholeGameKPIDisasterMultiplier,=0.8",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 8
+  },
+  {
+    "ID": "Health1BlueCardPack",
+    "EffectDescription": "初始生命值-30%，开一个蓝色卡牌包",
+    "EffectString": "Global,Health,-Operation(GetDataInt(Global:Health)*3/10 # OpenPack(Card;Small;2)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 10
+  },
+  {
+    "ID": "VIP",
+    "EffectDescription": "-80<sprite=1>；获得[会员卡]",
+    "EffectString": "Global,Money,-80 # AddPendant(会员卡)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 10
+  },
+  {
+    "ID": "OneForFree",
+    "EffectDescription": "-80<sprite=1>；获得[喜加一]",
+    "EffectString": "Global,Money,-80 # AddPendant(喜加一)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 10
+  },
+  {
+    "ID": "KPIAdd10BlueCardPack",
+    "EffectDescription": "全局游戏KPI+5%；开一个蓝色卡牌包",
+    "EffectString": "Global,WholeGameKPIMultiplier,=1.05 # OpenPack(Card;Small;2)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 10
+  },
+  {
+    "ID": "Sub200MoneyRedPendantPack",
+    "EffectDescription": "-100<sprite=1>；开一个红色挂件包",
+    "EffectString": "Global,Money,-100 # OpenPack(Pendant;Small;3)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 15
+  },
+  {
+    "ID": "KPIAdd20RedCardPack",
+    "EffectDescription": "全局游戏KPI+10%；开一个红色卡牌包",
+    "EffectString": "Global,WholeGameKPIMultiplier,=1.1 # OpenPack(Card;Small;3)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 15
+  },
+  {
+    "ID": "KPIAdd30GoldCardPack",
+    "EffectDescription": "全局游戏KPI+20%；开一个金色卡牌包",
+    "EffectString": "Global,WholeGameKPIMultiplier,=1.2 # OpenPack(Card;Small;4)",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 20
+  },
+  {
+    "ID": "KPIAdd30OriginPendant",
+    "EffectDescription": "全局游戏KPI+20%；获得职业对应的[原始水晶]",
+    "EffectString": "Global,WholeGameKPIMultiplier,=1.2 # AddOriginPendant()",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 20
+  }
+]

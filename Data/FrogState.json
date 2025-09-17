@@ -1,0 +1,147 @@
+[
+  {
+    "ID": "PokeLeft",
+    "ChatContent": "$……对吗？\n$对……吗？哦不对！\n$哦不对不对\n$哦对吗？\n$哦对的对的！",
+    "AnimationName": [
+      "Poked(Left)"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "PokeRight",
+    "ChatContent": "$……对吗？\n$对……吗？哦不对！\n$哦不对不对\n$哦对吗？\n$哦对的对的！",
+    "AnimationName": [
+      "Poked(Right)"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "Enter",
+    "ChatContent": "$来了老板\n$缓赢光拎~老板~",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "Idle",
+    "ChatContent": "$感觉你今天气色不错\n$我们都是果子变的，你觉得呢？\n$你每次来我会在的\n$今天放假了吗\n$今天外面阳光好好，我也想出去玩\n$我感觉你上把打得不错\n$希望你工作顺利\n$要喝点东西不？我没法给你倒，你给自己倒杯吧",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "CannotAfford",
+    "ChatContent": "$不好意思不赊账的老板\n$哎呀钱不够呀",
+    "AnimationName": [
+      "Speechless"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "CardPackHover",
+    "ChatContent": "$这个我都不赚钱的\n$基本上是成本价了\n$这个也不错的\n$你问我怎么搞来的这些卡牌？四个字，纸杯蛋糕\n$外面都卖99980的\n$上次买的用着咋样？\n$老板好品味\n$进价就不便宜的这个\n$这是我从一个背着两把剑的白发肌肉壮汉手里换的，他长得可吓人了，眼睛上还有道疤呢\n$不亏的这个<size=20>（也不保证）</size>\n$单口相声是另外一个价钱\n$店里的传家宝这是\n$滑溜溜，亮闪闪的卡牌包\n$很有未来了",
+    "AnimationName": [
+      "TiltedHead",
+      "RubHands"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "PendantHover",
+    "ChatContent": "$经典时尚小挂件来的\n$老板考虑买断吗？\n$买回去就算没用贴冰箱也不错的\n$这是源头工厂的货，没有中间商赚差价（等等我好像就是中间商？）\n$这是给外国高端奢侈品牌做了十二年代工的外贸货\n$滑溜溜，亮闪闪的小挂件\n$我为了拿到这个，打了99层的地下城\n$我当时为了搞到这个，和那人砍了3天的价\n$我拿这个的时候，拐角有一只小怪阴我来着，我还顺便传了个火\n$这是老青蛙留给我的，我用不上了，等有缘人",
+    "AnimationName": [
+      "RubHands"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "PendantBuy",
+    "ChatContent": "$感谢支持！\n$感谢您\n$老板好品味！\n$哇！全仰仗您照顾了\n$感谢！\n$谢谢惠顾！\n$感谢老板！",
+    "AnimationName": [
+      "RubHands"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "HealthHover-Free",
+    "ChatContent": "$免费青蛙按摩！\n$本店福利，第一次免费！",
+    "AnimationName": [
+      "Happy"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "HealthHover",
+    "ChatContent": "$花点小钱，回复血量\n$力度如何？\n$喝汤一样轻松\n$俺们这都是绿色服务",
+    "AnimationName": [
+      "Happy"
+    ],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "HealthBuy-Success",
+    "ChatContent": "$我感觉你还蛮需要这个的\n$外面那么凶险，身体不好可不行",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "HealthBuy-Fail",
+    "ChatContent": "$按不动了，老板\n$俺不中了",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "LandHover",
+    "ChatContent": "要开块地吗",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "ExitHover",
+    "ChatContent": "$要走了？\n$下次见！\n$我会想你的",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "SellCardHover",
+    "ChatContent": "$有不要的卡可以卖给我\n$我听说别的地方删卡还要花钱",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "DeckView",
+    "ChatContent": "看看自己有啥",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "PokeBigger50",
+    "ChatContent": "哎呀，我没有不耐烦的动画，你再戳下去也不会有什么结果的",
+    "AnimationName": [],
+    "isLoop": false,
+    "isReplaceIdle": false
+  },
+  {
+    "ID": "PriceBigger20",
+    "ChatContent": "",
+    "AnimationName": [
+      "ClapHands"
+    ],
+    "isLoop": true,
+    "isReplaceIdle": true
+  }
+]

@@ -1,0 +1,102 @@
+[
+  {
+    "Level": 1,
+    "NextLevelExp": 800,
+    "UnlockCardID": [
+      "Mushroom-2"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 2,
+    "NextLevelExp": 900,
+    "UnlockCardID": [
+      "Mushroom-15"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 3,
+    "NextLevelExp": 1000,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Panda-3"
+    ]
+  },
+  {
+    "Level": 4,
+    "NextLevelExp": 1100,
+    "UnlockCardID": [
+      "Mushroom-1"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 5,
+    "NextLevelExp": 1200,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Panda-8"
+    ]
+  },
+  {
+    "Level": 6,
+    "NextLevelExp": 1300,
+    "UnlockCardID": [
+      "Rain-5"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 7,
+    "NextLevelExp": 1400,
+    "UnlockCardID": [
+      "TimeExplode-21"
+    ],
+    "UnlockPendantID": [
+      "P-TimeExplode-2"
+    ]
+  },
+  {
+    "Level": 8,
+    "NextLevelExp": 1600,
+    "UnlockCardID": [
+      "Mushroom-6"
+    ],
+    "UnlockPendantID": [
+      "P-Mushroom-2"
+    ]
+  },
+  {
+    "Level": 9,
+    "NextLevelExp": 1800,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Rain-4"
+    ]
+  },
+  {
+    "Level": 10,
+    "NextLevelExp": 2000,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Rice-9"
+    ]
+  },
+  {
+    "Level": 11,
+    "NextLevelExp": 2400,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Mushroom-6"
+    ]
+  },
+  {
+    "Level": 12,
+    "NextLevelExp": 2600,
+    "UnlockCardID": [
+      "Mushroom-5"
+    ],
+    "UnlockPendantID": []
+  }
+]

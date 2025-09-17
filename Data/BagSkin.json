@@ -1,0 +1,66 @@
+[
+  {
+    "SkinName": "Normal",
+    "Name": "破破袋子",
+    "UnLocked": 1,
+    "UnlockCondition": "",
+    "StarCount": 0,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "plaid_Blue",
+    "Name": "蓝白格",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 8,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "Puffer",
+    "Name": "豚豚",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 15,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "SunFace",
+    "Name": "安心笑容",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 20,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "WinXP",
+    "Name": "千禧年",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 30,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "Patchwork fabric",
+    "Name": "百家布",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 50,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "Golden",
+    "Name": "黄金",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 100,
+    "Controduction": ""
+  },
+  {
+    "SkinName": "StarNight",
+    "Name": "满天星",
+    "UnLocked": 0,
+    "UnlockCondition": "不进行读档的情况下通关一次游戏",
+    "StarCount": 0,
+    "Controduction": ""
+  }
+]

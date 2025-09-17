@@ -1,0 +1,1314 @@
+[
+  {
+    "ID": "Box",
+    "Name": "补给箱",
+    "LimitStage": -1,
+    "Character": "All",
+    "Content": "到了公司发补给箱的时间。",
+    "Choices": [
+      {
+        "Description": "[拿走金币箱后离开]<color=#8ACF5C>打开金币箱</color>",
+        "Effect": "OpenBox(0) # Exit"
+      },
+      {
+        "Description": "[拿走挂件箱后离开]<color=#8ACF5C>打开挂件箱</color>",
+        "Effect": "OpenBox(1) # Exit"
+      },
+      {
+        "Description": "[拿走卡牌箱后离开]<color=#8ACF5C>打开卡牌箱</color>",
+        "Effect": "OpenBox(2) # Exit"
+      },
+      {
+        "Description": "[都不拿]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Bingo",
+    "Name": "呱呱乐",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你路过一家呱呱乐店。\n店主说：<color=#62B2E0>“有三种，可以赊账，每人限购两张。”</color>\n<color=#62B2E0>“呱呱乐的回本率是90%，风险低收益低”</color>\n<color=#62B2E0>“Bingo的回本率是50%，风险高收益高”</color>\n<color=#62B2E0>“蛙得福的回本率是30%，风险很高收益也很高”</color>",
+    "Choices": [
+      {
+        "Description": "[开1张呱呱乐]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张呱呱乐</color>",
+        "Effect": "OpenBingoOrScratch(Scratch;1) # Global,Money,-10 # MapEventTurn(Bingo-1;false)"
+      },
+      {
+        "Description": "[开1张Bingo]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张Bingo</color>",
+        "Effect": "OpenBingoOrScratch(Bingo;1) # Global,Money,-10 #MapEventTurn(Bingo-1;false)"
+      },
+      {
+        "Description": "[开1张蛙得福]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张蛙得福</color>",
+        "Effect": "OpenBingoOrScratch(WonderFrog;1) # Global,Money,-10 #MapEventTurn(Bingo-1;false)"
+      },
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Bingo-1",
+    "Name": "呱呱乐",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "要再来一张吗？",
+    "Choices": [
+      {
+        "Description": "[开1张呱呱乐再走]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张呱呱乐</color>",
+        "Effect": "OpenBingoOrScratch(Scratch;1) # Global,Money,-10 # MapEventTurn(Bingo-End;false))"
+      },
+      {
+        "Description": "[开1张Bingo再走]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张Bingo</color>",
+        "Effect": "OpenBingoOrScratch(Bingo;1) # Global,Money,-10 # MapEventTurn(Bingo-End;false))"
+      },
+      {
+        "Description": "[开1张蛙得福]<color=#DD4949>-10<sprite=1></color>，<color=#8ACF5C>打开1张蛙得福</color>",
+        "Effect": "OpenBingoOrScratch(WonderFrog;1) # Global,Money,-10 #  MapEventTurn(Bingo-End;false))"
+      },
+      {
+        "Description": "[不了]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Bingo-End",
+    "Name": "呱呱乐",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "到达限购数量了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Health",
+    "Name": "身体是本钱",
+    "LimitStage": 12,
+    "Character": "All",
+    "Content": "你最近觉得身体有些不适，你决定：",
+    "Choices": [
+      {
+        "Description": "[办卡健身]<color=#DD4949>-100<sprite=1>（可以欠债）</color>，<color=#8ACF5C>获得：[|杠铃|]</color>",
+        "Effect": "Global,Money,-100 # AddPendant(杠铃) # Exit"
+      },
+      {
+        "Description": "[继续工作]<color=#8ACF5C>+50<sprite=1></color>，<color=#DD4949>获得：[|亚健康|]</color>",
+        "Effect": "Global,Money,50 # AddPendant(亚健康) # Exit"
+      },
+      {
+        "Description": "[平衡生活]什么也没有发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Butterfly",
+    "Name": "花间曳影",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你在窗边偶然发现了一只奄奄一息的蝴蝶，你决定：",
+    "Choices": [
+      {
+        "Description": "[买一些营养液救她]<color=#DD4949>-100<sprite=1>（可以欠债）</color>，<color=#8ACF5C>获得一张[|花间曳影|]</color>",
+        "Effect": "Global,Money,-100 # BagIn(花间曳影;1) # Turn"
+      },
+      {
+        "Description": "[无视]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Butterfly-1",
+    "Name": "花间曳影",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "隔天醒来，发现蝴蝶已经消失，窗边竟不知何时出现了一张卡牌。卡面上，蝶影摇曳，仿若蝴蝶轻舞。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Butterfly-2",
+    "Name": "花间曳影",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "隔天，蝴蝶消失了，什么也没有发生",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "[离开]"
+      }
+    ]
+  },
+  {
+    "ID": "Chance",
+    "Name": "小小机会",
+    "LimitStage": 2,
+    "Character": "All",
+    "Content": "你得到了一个晋升机会，项目需要你做出一些成绩：",
+    "Choices": [
+      {
+        "Description": "[十分努力工作]<color=#8ACF5C>获得红色挂件包x1</color>，<color=#DD4949>下一年KPI+10%</color>",
+        "Effect": "OpenPack(Pendant;Small;3) # NextYear(Global,None,KPIMultiplier,0.1 : 1) # Exit"
+      },
+      {
+        "Description": "[一般努力工作]<color=#8ACF5C>获得蓝色挂件包x1，<color=#DD4949>下一年KPI+5%</color>",
+        "Effect": "OpenPack(Pendant;Small;2) # NextYear(Global,None,KPIMultiplier,0.05 : 1) # Exit"
+      },
+      {
+        "Description": "[该咋咋地]<color=#8ACF5C>获得白色挂件包x1</color>",
+        "Effect": "OpenPack(Pendant;Small;1) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ExpandLand",
+    "Name": "花钱开地",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你在路边遇到了一位扛着锄头的壮壮小水牛：\n\n<color=#62B2E0>“你好老板，花钱开地吗”</color>",
+    "Choices": [
+      {
+        "Description": "[开！]<color=#DD4949>-{Operation(GetDataInt(Global:NowExpandLandCost)*0.5)}<sprite=1>（5折）</color>，<color=#8ACF5C>扩展一个地块</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,Operation(GetDataInt(Global:NowExpandLandCost)*0.5) && Global,CanExpandLand,Equal,1}  Global,Money,-Operation(GetDataInt(Global:NowExpandLandCost)*0.5) # ExpandLand() # Turn"
+      },
+      {
+        "Description": "[算了]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ExpandLand-1",
+    "Name": "花钱开地",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“整好了，还开吗？”</color>",
+    "Choices": [
+      {
+        "Description": "[开！]<color=#DD4949>-{Operation(GetDataInt(Global:NowExpandLandCost)*0.6)}<sprite=1>（6折）</color>，<color=#8ACF5C>扩展一个地块</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,Operation(GetDataInt(Global:NowExpandLandCost)*0.6) && Global,CanExpandLand,Equal,1}  Global,Money,-Operation(GetDataInt(Global:NowExpandLandCost)*0.6) # ExpandLand() # Turn"
+      },
+      {
+        "Description": "[算了]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ExpandLand-1-1",
+    "Name": "花钱开地",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“接着开吗？”</color>",
+    "Choices": [
+      {
+        "Description": "[开！]<color=#DD4949>-{Operation(GetDataInt(Global:NowExpandLandCost)*0.7)}<sprite=1>（7折）</color>，<color=#8ACF5C>扩展一个地块</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,Operation(GetDataInt(Global:NowExpandLandCost)*0.7) && Global,CanExpandLand,Equal,1}  Global,Money,-Operation(GetDataInt(Global:NowExpandLandCost)*0.7) # ExpandLand() # Turn"
+      },
+      {
+        "Description": "[算了]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ExpandLand-1-1-1",
+    "Name": "花钱开地",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“还开吗？”</color>",
+    "Choices": [
+      {
+        "Description": "[开！]<color=#DD4949>-{GetDataInt(Global:NowExpandLandCost)}<sprite=1></color>，<color=#8ACF5C>扩展一个地块</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,GetDataInt(Global:NowExpandLandCost) && Global,CanExpandLand,Equal,1}  Global,Money,-GetDataInt(Global:NowExpandLandCost) # ExpandLand() # Turn"
+      },
+      {
+        "Description": "[算了]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ExpandLand-1-1-1-1",
+    "Name": "花钱开地",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“接着开吗？俺有一身使不完的牛劲”</color>",
+    "Choices": [
+      {
+        "Description": "[开！]<color=#DD4949>-{GetDataInt(Global:NowExpandLandCost)}<sprite=1></color>，<color=#8ACF5C>扩展一个地块</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,GetDataInt(Global:NowExpandLandCost) && Global,CanExpandLand,Equal,1}  Global,Money,-GetDataInt(Global:NowExpandLandCost) # ExpandLand() # Update"
+      },
+      {
+        "Description": "[算了]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OriginStone",
+    "Name": "源初之石",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "路边遇到了个蛙老太，她想卖你个好石头：",
+    "Choices": [
+      {
+        "Description": "[买！]<color=#DD4949>-100<sprite=1></color>（可以欠债），<color=#8ACF5C>从原始卡组里删掉1张牌</color>",
+        "Effect": "DeleteOriginCard # Global,Money,-100# Turn"
+      },
+      {
+        "Description": "[拿了就跑]<color=#DD4949>-20<sprite=0></color>，<color=#8ACF5C>从原始卡组里删掉1张牌</color>",
+        "Effect": "{Global,Health,Bigger,20} Global,Health,-20 # DeleteOriginCard # Turn"
+      },
+      {
+        "Description": "[无视她]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OriginStone-1",
+    "Name": "源初之石",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "蛙老太说道:\n<color=#62B2E0>“石头还有剩余的能量”</color>",
+    "Choices": [
+      {
+        "Description": "[请老太帮忙]<color=#DD4949>-200<sprite=1></color>，<color=#8ACF5C>从原始卡组里删掉1张牌</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,200} DeleteOriginCard # Global,Money,-200# Turn"
+      },
+      {
+        "Description": "[这样就OK]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OriginStone-1-1",
+    "Name": "源初之石",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“乌里哇啦！”</color>\n随着蛙人老太大叫一声，石头应声而裂。\n老太和你选的原始卡牌都消失了。\n你得偿所愿。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OriginStone-2",
+    "Name": "源初之石",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "奔跑过程中，你觉得口袋里的石头愈发炽热，你被烧伤的同时，1张卡也被销毁了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Sculpture",
+    "Name": "青蛙雕像",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你在路边发现了一个做工精致的小雕像，你决定：",
+    "Choices": [
+      {
+        "Description": "[带回去]<color=#8ACF5C>将[|青蛙雕像|]放到袋子里</color>",
+        "Effect": "BagIn(青蛙雕像;1)  # Exit"
+      },
+      {
+        "Description": "[无视它]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "TimeScale",
+    "Name": "升级时间刻度条",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你突然发现你的时间刻度条出现了一些问题，与后勤部反馈之后，得到回复：\n十分抱歉！该型号的时间刻度条版本太过老旧，我们暂时找不到替换件。\n由于你级别不足，使用最新版本需要缴纳一定费用，是否选择升级到最新版本？\n如果您不想立即更换，也可以选择交给后勤部门进行修理。由于新的配件需要一段时间才能到货，公司会给予一些补贴以弥补等待期间的损失。\n你决定：",
+    "Choices": [
+      {
+        "Description": "[咬咬牙上新型号]<color=#DD4949>-150<sprite=1></color>（可以欠债），<color=#8ACF5C>升级时间刻度条</color>",
+        "Effect": "Global,Money,-150 # ChangeTimeScaleAward(1;true) # ChangeTimeScaleAward(2;true) # Exit"
+      },
+      {
+        "Description": "[接受补贴]<color=#8ACF5C>+30<sprite=1></color>，<color=#DD4949>时间刻度条上的全局生长暂时停用1年</color>",
+        "Effect": "ForbidTimeScaleAwardForYear(0;1) # Turn"
+      },
+      {
+        "Description": "[强硬要求]立刻修好，一切照常",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "TimeScale-2",
+    "Name": "升级时间刻度条",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你拿到了一个备用的基础时间刻度条和一笔补贴。",
+    "Choices": [
+      {
+        "Description": "<color=#8ACF5C>[+30<sprite=1>]</color>",
+        "Effect": "Global,Money,30 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "ChooseWeather",
+    "Name": "下点啥好捏",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你在公司仓库角落发现了一个破破烂烂的气候操作器，你决定：",
+    "Choices": [
+      {
+        "Description": "[下雨]<color=#8ACF5C>下一年中回合开始时全局生长+1</color>",
+        "Effect": "NextEveryRound(AllGrow(1); 4) # Exit"
+      },
+      {
+        "Description": "[下雪]<color=#8ACF5C>下一年中回合开始时+4<sprite=1></color>",
+        "Effect": "NextEveryRound(Global,Money,4 ; 4) # Exit"
+      },
+      {
+        "Description": "[下冰雹]<color=#8ACF5C>下一年中回合开始时随机使1植物生长+3</color>",
+        "Effect": "NextEveryRound(RandomGrow(3) ;4) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Classmate",
+    "Name": "老同学",
+    "LimitStage": 2,
+    "Character": "All",
+    "Content": "手机响了，是一个老同学来找你帮忙：\n<color=#62B2E0>“帮我个忙可以吗？有偿”</color>\n你决定：",
+    "Choices": [
+      {
+        "Description": "[在满满的工作中努力挤出时间]<color=#8ACF5C>蓝色大卡牌包x1</color>，<color=#DD4949>下1年KPI+15%</color>",
+        "Effect": "OpenPack(Card;Big;2) # NextYear(Global,None,KPIMultiplier,0.15 : 1) # Exit"
+      },
+      {
+        "Description": "[“你之前欠我的钱还了吗？”]<color=#8ACF5C>蓝色挂件包x1</color>",
+        "Effect": "OpenPack(Pendant;Small;2) # Exit"
+      },
+      {
+        "Description": "[不回]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "InjuredFrog",
+    "Name": "受伤的小青蛙",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你在路边遇到了个受伤的小青蛙\n<color=#62B2E0>“你好，请问可以帮帮俺吗，俺会报答你的”</color>",
+    "Choices": [
+      {
+        "Description": "[上山采草药]<color=#DD4949>-6<sprite=0></color>，<color=#8ACF5C>下一年中每回合开始时临时时间+1</color>",
+        "Effect": "{Global,Health,Bigger,6}  Global,Health,-6 # NextEveryRound(Global,TempTimeLabelLimit,1; 4) # Exit"
+      },
+      {
+        "Description": "[去药店买药]<color=#DD4949>-30<sprite=1>（可以欠债），<color=#8ACF5C>下一年春季中，打出的所有法术牌都将额外生效1次</color>",
+        "Effect": "Global,Money,-30 # NextRound(Global,None,PlayTimes,1 : 1) # Exit"
+      },
+      {
+        "Description": "[无视小青蛙]什么也不会发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalDay",
+    "Name": "普通的一天",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "这天，你在公司午休时，突然被一阵爆炸声惊醒。你发现自己身处虚空，时间碎片在你周围飞舞。经历过员工安全培训的你意识到这里是一个破碎的时空裂缝。\n你的面前有一尊巨大的青蛙雕像，它的双眼紧闭，你却觉得它正在注视着你。你感觉到一种无法抗拒的力量在拉扯你的心智。\n你决定：",
+    "Choices": [
+      {
+        "Description": "[祈祷] <color=#DD4949>-20<sprite=1></color>，<color=#8ACF5C>下一年即使时间爆炸也不会扣除<sprite=0></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,20} NextEveryRound(Global,TimeExplodeShield,1 ; 4) # Global,Money,-20 # Turn"
+      },
+      {
+        "Description": "[偷拿贡品] <color=#DD4949>-50%<sprite=0></color>，<color=#8ACF5C>+20<sprite=1></color>",
+        "Effect": "Global,Health,-Operation(GetDataInt(Global:Health)*5/10) # Global,Money,20 # Turn"
+      },
+      {
+        "Description": "[只想回去]什么也没发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalDay-1",
+    "Name": "普通的一天",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "所幸你还记得员工手册上的祷语：\n<color=#62B2E0>“蛤匹福若阁，蛤匹阿瑞代。”</color>\n你刚默念完，周围的虚空开始扭曲，温暖的暖流瞬间涌上全身，仿佛有一股无形的力量在保护着你。你感受到了一阵前所未有的平静。\n当你再次睁开眼时，发现自己已经回到了公司工位上，一切仿佛从未发生过。但心底那一丝微妙的变化，提醒着你刚才的经历并非幻觉。",
+    "Choices": [
+      {
+        "Description": "[揉揉自己接着上班]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalDay-2",
+    "Name": "普通的一天",
+    "LimitStage": 1,
+    "Character": "All",
+    "Content": "你刚把东西放到口袋里，一声巨大的尖锐爆鸣在你耳旁炸裂开来，你还来不及后悔，就眼前一黑，被一股巨大的力量推回到了现实。\n你在公司的地上翻了好几个圈，所幸生命无碍。",
+    "Choices": [
+      {
+        "Description": "[揉揉自己接着上班]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Rabbit",
+    "Name": "兔兔之灾",
+    "LimitStage": 1,
+    "Character": "Animal",
+    "Content": "你走在路上发现了一窝兔兔被遗弃在了路边，你决定：",
+    "Choices": [
+      {
+        "Description": "[把它们带到医院检查然后带回家养]<color=#DD4949>-100<sprite=1></color>（可以欠债），<color=#8ACF5C>获得[|三只兔兔|]</color>",
+        "Effect": "Global,Money,-100 # BagIn(三只兔兔;1) # Exit"
+      },
+      {
+        "Description": "[拿走箱子里的东西]<color=#8ACF5C>打开一个白色挂件包</color>",
+        "Effect": "OpenPack(Pendant;Small;1) # Exit"
+      },
+      {
+        "Description": "[什么也不做]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "CareerPlan",
+    "Name": "职业规划",
+    "LimitStage": 2,
+    "Character": "All",
+    "Content": "电脑屏幕突然闪烁，弹出了一条信息。\n屏幕上写着：\n<color=#62B2E0>“由于你的出色表现，公司决定给你一个重要的选择机会。这将对你未来的职业发展产生重大影响。”</color>\n电脑屏幕静静地等待着你的决定。",
+    "Choices": [
+      {
+        "Description": "[加薪]<color=#8ACF5C>下一年KPI-10%</color>",
+        "Effect": "NextYear(Global,None,KPIMultiplier,-0.1 : 1) # Exit"
+      },
+      {
+        "Description": "[升职]<color=#8ACF5C>打开一个12选1的卡牌包</color>",
+        "Effect": "OpenOneOfFourteen() # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "TimeDragon",
+    "Name": "时间龙觉得不行",
+    "LimitStage": 2,
+    "Character": "All",
+    "Content": "深夜，你疲惫地拖着步伐走在回家的路上，四周空无一人。突然，一道幽暗的光芒在前方闪烁，一条庞大的龙从虚空中显现出来。这条龙的鳞片泛着时间流逝的光泽，仿佛它掌控着时间本身。\n\n<color=#62B2E0>“人类，你为何这么晚才下班。”</color>\n龙的声音低沉而悠远，\n<color=#62B2E0>“吾乃时间之龙，见汝每日为工作劳碌，疲惫不堪。吾可助汝一臂之力，若汝愿以数金为代价，吾可减轻汝之负担。”</color>\n\n龙停顿了一下，目光变得柔和了些：\n<color=#62B2E0>“然，倘若汝不愿冒此风险，吾亦可赠汝数金，供汝稍作慰藉，以充夜食。如何抉择，全凭汝心。”</color>",
+    "Choices": [
+      {
+        "Description": "[吃下龙尾巴]-555<sprite=1>，获得[|时间龙の尾|]",
+        "Effect": "{Global,Money,BiggerOrEqual,555}Global,Money,-555 # AddPendant(时间龙の尾)  # Turn"
+      },
+      {
+        "Description": "[接受时间龙的钱去买夜宵]<color=#8ACF5C>+50<sprite=1></color>",
+        "Effect": "Global,Money,50 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "TimeDragon-1",
+    "Name": "时间龙觉得不行",
+    "LimitStage": 2,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“哐呲哐呲”</color>\n时间龙递了一节尾巴给你。",
+    "Choices": [
+      {
+        "Description": "[谢谢时间龙]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "MaskPlant",
+    "Name": "假面草",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "你在田间劳作时，突然发现了一处扭曲的时空裂隙，裂隙边缘泛着不规则的蓝光。一株怪异的植物正从裂隙根部生长而出。\n它通体碧绿，叶片上布满了银色的纹路，植物的顶端有一个花苞，花苞的形状像是一张面具，仿佛在模仿你惊愕的表情。\n你记得员工守则里提到过这样的情况，可以通知总公司来免费处理，运气好的话还有机会得到1笔奖励。又或者你认为这株特殊的植物有独特的用处，可以买一瓶时间稳定剂，偷偷将它留下，你决定：",
+    "Choices": [
+      {
+        "Description": "[私自留下]<color=#DD4949>-300<sprite=1></color>，<color=#8ACF5C>获得[|假面草|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,300}Global,Money,-300 # BagIn(假面草;1) #Exit"
+      },
+      {
+        "Description": "[通知公司来处理，获得奖励]<color=#8ACF5C>+70<sprite=1></color>",
+        "Effect": "Global,Money,70 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Who",
+    "Name": "谁啊这是？",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "突然，你听到敲门声：\n<color=#62B2E0>“老板好……”</color>\n一个你不认识，戴着口罩，把自己包裹得很严实，神神秘秘的人出现在门口，TA的声音沙哑且扭捏\n<color=#62B2E0>“老板好……我是……发明家”  “听他们说你在管理一个农场……”\n“我想你可能会需要……我发明的这些东西……”</color>\nTA边说着，从包里掏出了一堆古怪的装置\n<color=#62B2E0>“请考虑考虑吧……不会很贵……”</color>\n你决定：",
+    "Choices": [
+      {
+        "Description": "[买1个]<color=#DD4949>-300<sprite=1></color>，<color=#8ACF5C>获得[|延时雨|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,300}Global,Money,-300 # AddPendant(延时雨) #Exit"
+      },
+      {
+        "Description": "[买另1个]<color=#DD4949>-300<sprite=1></color>，<color=#8ACF5C>获得[|人造云|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,300}Global,Money,-300 # AddPendant(人造云) #Exit"
+      },
+      {
+        "Description": "[全都买了]<color=#DD4949>-600<sprite=1></color>，<color=#8ACF5C>获得[|延时雨|]和[人造云]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,600}Global,Money,-600 # AddPendant(延时雨) #AddPendant(人造云)#Exit"
+      },
+      {
+        "Description": "[把TA赶走]什么也不会发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Double",
+    "Name": "两倍速",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "恭喜你！你被选中试用！ \n震撼科技，颠覆未来！时间科技有限公司研发部门潜心三年，全新突破！\n高效·科技·节能·时间加速器！\n弹指一挥间，只需短短一瞬，即可让你的世界极速运转，效率翻倍！ \n名额有限，先到先得！",
+    "Choices": [
+      {
+        "Description": "[搞一个！]<color=#DD4949>-500<sprite=1></color>，<color=#8ACF5C>获得[|两倍速|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,500} Global,Money,-500 # BagIn(两倍速;1) #Exit"
+      },
+      {
+        "Description": "[好怪啊]离开",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Dew",
+    "Name": "露珠贩卖机",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你在青蛙商店的角落里发现了一台从未见过的自动贩卖机。\n它破旧不堪，机身布满灰尘，仿佛已被遗忘多年。\n屏幕早已失去光泽，按钮也松松垮垮。\n\n是被淘汰已久的<color=#62B2E0>专属露珠</color>贩卖机",
+    "Choices": [
+      {
+        "Description": "[来1个吧]<color=#DD4949>-60<sprite=1></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,60} Global,Money,-60 # Turn"
+      },
+      {
+        "Description": "[来2个吧]<color=#DD4949>-120<sprite=1></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,120} Global,Money,-120 #Turn"
+      },
+      {
+        "Description": "[来3个吧]<color=#DD4949>-180<sprite=1></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,180} Global,Money,-180 #Turn"
+      },
+      {
+        "Description": "[无视它]什么也不会发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Dew-1",
+    "Name": "露珠贩卖机",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "呲呲！\n1张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
+    "Choices": [
+      {
+        "Description": "[拿走露珠]<color=#8ACF5C>获得1张[专属露珠]</color>",
+        "Effect": "BagInOriginDew(1) #Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Dew-2",
+    "Name": "露珠贩卖机",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "呲呲！\n2张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
+    "Choices": [
+      {
+        "Description": "[拿走露珠]<color=#8ACF5C>获得2张[专属露珠]</color>",
+        "Effect": "BagInOriginDew(2) #Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Dew-3",
+    "Name": "露珠贩卖机",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "呲呲！\n3张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
+    "Choices": [
+      {
+        "Description": "[拿走露珠]<color=#8ACF5C>获得3张[专属露珠]</color>",
+        "Effect": "BagInOriginDew(3) #Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你发现青蛙商店里多了个歪歪扭扭的转盘\n<color=#62B2E0>“我也搞了个转盘，回馈老客户感恩活动”</color>\n<color=#62B2E0>“获胜获得双倍！”</color>",
+    "Choices": [
+      {
+        "Description": "[50<sprite=1>猜<color=#8ACF5C>大</color>]",
+        "Effect": "Global,Money,-50 #Turn # Spin(Dice)"
+      },
+      {
+        "Description": "[100<sprite=1>猜<color=#8ACF5C>大</color>]",
+        "Effect": "Global,Money,-100 #Turn # Spin(Dice)"
+      },
+      {
+        "Description": "[50<sprite=1>猜<color=#DD4949>小</color>]",
+        "Effect": "Global,Money,-50 #Turn # Spin(Dice)"
+      },
+      {
+        "Description": "[100<sprite=1>猜<color=#DD4949>小</color>]",
+        "Effect": "Global,Money,-100 #Turn # Spin(Dice)"
+      },
+      {
+        "Description": "[不参加]转身就走",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-1",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你转动了转盘。",
+    "Choices": []
+  },
+  {
+    "ID": "NormalSpin-1-1",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "很遗憾，猜错了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-1-2",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "恭喜你！猜对了！",
+    "Choices": [
+      {
+        "Description": "[拿走奖励]<color=#8ACF5C>+100<sprite=1></color>",
+        "Effect": "Global,Money,100# Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-2",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你转动了转盘。",
+    "Choices": []
+  },
+  {
+    "ID": "NormalSpin-2-1",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "很遗憾，猜错了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-2-2",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "恭喜你！猜对了！",
+    "Choices": [
+      {
+        "Description": "[拿走奖励]<color=#8ACF5C>+200<sprite=1></color>",
+        "Effect": "Global,Money,200# Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-3",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你转动了转盘。",
+    "Choices": []
+  },
+  {
+    "ID": "NormalSpin-3-1",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "恭喜你！猜对了！",
+    "Choices": [
+      {
+        "Description": "[拿走奖励]<color=#8ACF5C>+100<sprite=1></color>",
+        "Effect": "Global,Money,100# Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-3-2",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "很遗憾，猜错了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-4",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你转动了转盘。",
+    "Choices": []
+  },
+  {
+    "ID": "NormalSpin-4-1",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "恭喜你！猜对了！",
+    "Choices": [
+      {
+        "Description": "[拿走奖励]<color=#8ACF5C>+200<sprite=1></color>",
+        "Effect": "Global,Money,200# Exit"
+      }
+    ]
+  },
+  {
+    "ID": "NormalSpin-4-2",
+    "Name": "简单的转盘",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "很遗憾，猜错了。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“来……试一下吧。”</color>\n<color=#62B2E0>“免费……”</color>\n<color=#62B2E0>“但有可能付出代价……”</color>",
+    "Choices": [
+      {
+        "Description": "[转动]",
+        "Effect": "Spin(FrogSaron)"
+      },
+      {
+        "Description": "[算了]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-1",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E0>非常……感谢……</color>",
+    "Choices": [
+      {
+        "Description": "[哎呀]<color=#DD4949>-20<sprite=0></color>（最少为1）",
+        "Effect": "TrySubHealth(20) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-2",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E0>非常……感谢……</color>",
+    "Choices": [
+      {
+        "Description": "[给钱]<color=#DD4949>-100<sprite=1></color>（可以欠债）",
+        "Effect": "Global,Money,-100 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-3",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E1>给你……橙汁……</color>",
+    "Choices": [
+      {
+        "Description": "[喝一口]<color=#8ACF5C>+999<sprite=0></color>",
+        "Effect": "Global,Health,999 #Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-4",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E2>给你……通用钱……</color>",
+    "Choices": [
+      {
+        "Description": "[接过]<color=#8ACF5C>+100<sprite=1></color>",
+        "Effect": "Global,Money,100 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-5",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E3>给你……人挂饰……</color>",
+    "Choices": [
+      {
+        "Description": "[接过]<color=#8ACF5C>获得红色大挂件包x1</color>",
+        "Effect": "OpenPack(Pendant;Big;3) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-6",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E4>给你……人用牌……</color>",
+    "Choices": [
+      {
+        "Description": "[接过]<color=#8ACF5C>获得红色大卡牌包x1</color>",
+        "Effect": "OpenPack(Card;Big;3) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "BigSpin-7",
+    "Name": "蛙格萨隆的转盘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E5>这个……很珍贵……</color>",
+    "Choices": [
+      {
+        "Description": "[接过]<color=#8ACF5C>金色大挂件包x1</color>",
+        "Effect": "OpenPack(Pendant;Big;4) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fraud",
+    "Name": "玩不起别玩",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "你在路边遇到了一个莫西干红毛狂蛙：\n<color=#62B2E0>“来抽抽乐吧！有相当珍贵的奖品！”</color>",
+    "Choices": [
+      {
+        "Description": "[来抽！]<color=#DD4949>-150<sprite=1></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,150} Global,Money,-150  # TurnSelfPic"
+      },
+      {
+        "Description": "[算了]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fraud-1",
+    "Name": "玩不起别玩",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "“我呱！”</color>",
+    "Choices": [
+      {
+        "Description": "[你抽出了一等奖]拿走",
+        "Effect": "Turn"
+      }
+    ]
+  },
+  {
+    "ID": "Fraud-1-1",
+    "Name": "玩不起别玩",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“啊……这……！！我这里面有60000张！你怎么一下就抽到了！”</color>\n<color=#62B2E0>“不行！不能……不能给你……！！”</color>\n<color=#62B2E0>“这样别人就不会来了！”</color>\n（莫西干红毛狂蛙紧紧抱住了奖品）",
+    "Choices": [
+      {
+        "Description": "[抢夺](60%机会)<color=#8ACF5C>获得金色大卡牌包x1</color>",
+        "Effect": "Probability(60%OpenPack(Card;Big;4)) # Turn"
+      },
+      {
+        "Description": "[折现好吧]<color=#8ACF5C>获得200<sprite=1></color>",
+        "Effect": "Global,Money,200 # Exit"
+      },
+      {
+        "Description": "[那你给我另一个吧]<color=#8ACF5C>获得红色挂件包x1</color>",
+        "Effect": "OpenPack(Pendant;Small;3) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fraud-1-1-1",
+    "Name": "玩不起别玩",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "莫西干红毛狂蛙一溜烟跑了，速度飞快，转眼就不见了踪影。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Thorn",
+    "Name": "怪荆棘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "你正在田间劳作，突然被暗红色的荆棘缠住了双脚。",
+    "Choices": [
+      {
+        "Description": "[用手小心拨开并治疗伤口]<color=#DD4949>-300<sprite=1></color>",
+        "Effect": "{Global,Money,BiggerOrEqual,300} Global,Money,-300 # Turn"
+      },
+      {
+        "Description": "[用刀劈开]什么也不会发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Thorn-1",
+    "Name": "怪荆棘",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "当你的指尖刚触及荆棘边缘，那些暗红尖刺突然如活物般战栗起来。\n数以千计的枝条在刺痛你掌心的瞬间骤然收缩盘错，形成了一支难以握持的法杖。",
+    "Choices": [
+      {
+        "Description": "[留下它]<color=#8ACF5C>获得[|荆棘法杖|]</color>",
+        "Effect": "AddPendant(荆棘法杖) # Exit"
+      },
+      {
+        "Description": "[还是卖了吧]<color=#8ACF5C>+300<sprite=1></color>",
+        "Effect": "Global,Money,300 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Cluster",
+    "Name": "香香又漂亮",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你考虑要不要额外在农场种一些花。",
+    "Choices": [
+      {
+        "Description": "[雇人种]<color=#DD4949>-300<sprite=1></color>（可以欠债），<color=#8ACF5C>获得[|促生花丛|]</color>",
+        "Effect": "Global,Money,-300  #BagIn(促生花丛;1) # Exit"
+      },
+      {
+        "Description": "[开辟一块荒地]<color=#DD4949>获得2张[|阻生荆棘|]，<color=#8ACF5C>获得[促生花丛]</color>",
+        "Effect": "BagIn(阻生荆棘;2) # BagIn(促生花丛;1) # Exit"
+      },
+      {
+        "Description": "[算了]无事发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "MagicLearner",
+    "Name": "麦迪武学徒",
+    "LimitStage": 3,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“请稍等片刻。”</color>\n你转过身来，背后突然响起低沉的声音。\n一位身披长袍的法师，不知何时已悄然出现在你的身后。\n<color=#62B2E0>“我已通过乌鸦，悄然观察了你许久。”</color>\n<color=#62B2E0>“如今，我愿将一些古老的法术传授于你。”</color>\n魔法的力量并非轻易所得，你愿意为此付出多少？",
+    "Choices": [
+      {
+        "Description": "[给人] <color=#DD4949><sprite=0>上限变为11</color>，<color=#8ACF5C>获得[|麦迪武学徒徽章|]</color>",
+        "Effect": "Global,HealthLimit,=11 # AddPendant(麦迪武学徒徽章) # Exit"
+      },
+      {
+        "Description": "[给钱] <color=#DD4949>-648<sprite=1></color>，获得<color=#8ACF5C>[|麦迪武学徒徽章|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,648} Global,Money,-648 # AddPendant(麦迪武学徒徽章) # Exit"
+      },
+      {
+        "Description": "[给时间] <color=#DD4949>下一年时间上限-1</color>，<color=#8ACF5C>获得[|麦迪武学徒徽章|]</color>",
+        "Effect": "NextYear(Global,None,TimeLabelLimit,-1 : 1)  # AddPendant(麦迪武学徒徽章) # Exit"
+      },
+      {
+        "Description": "[骗子吧]无事发生",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Crystal",
+    "Name": "原始力量",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你在日常检查田地的时候，发现农场的角落出现了一块不规则水晶。水晶上反射出绮丽的光，看起来华丽又诡异。",
+    "Choices": [
+      {
+        "Description": "[拿走]<color=#DD4949>下一年时间上限-1</color>，<color=#8ACF5C>收下这块[@OriginPendant@原始水晶]</color>",
+        "Effect": "NextYear(Global,None,TimeLabelLimit,-1 : 1)  #AddOriginPendant()#Turn"
+      },
+      {
+        "Description": "[砸碎]<color=#8ACF5C><sprite=0>恢复至上限</color>",
+        "Effect": "Global,Health,GetDataInt(Global:HealthLimit) # Turn"
+      },
+      {
+        "Description": "[上交]<color=#8ACF5C>+100<sprite=1></color>",
+        "Effect": "Global,Money,100 # Turn"
+      }
+    ]
+  },
+  {
+    "ID": "Crystal-1",
+    "Name": "原始力量",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "在你拿起水晶的瞬间，水晶暗淡数秒后，光芒更甚。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Crystal-2",
+    "Name": "原始力量",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你将水晶砸了个粉碎，热量顺着脚尖散布了整个身体，所有疲惫都一扫而空，你感到无比轻松。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Crystal-3",
+    "Name": "原始力量",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你小心翼翼地把水晶包好，上交给了公司，获得了一笔奖金。",
+    "Choices": [
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "TransferBlood",
+    "Name": "选哪个呢",
+    "LimitStage": 0,
+    "Character": "Blood",
+    "Content": "你不小心把初始卡组里的[加班耕种]掉进了水里，一只青蛙飘了出来，问：\n<color=#62B2E0>“你掉的，是这个[加班耕种]，\n还是这个[躺平不干]，\n还是这个[防护演习]呢？”</color>",
+    "Choices": [
+      {
+        "Description": "[躺平不干]把初始卡组里的[加班耕种]全部替换成[|躺平不干|]",
+        "Effect": "Transfer(Filter(Deck'(Name'Is'加班耕种));躺平不干) # Exit"
+      },
+      {
+        "Description": "[防护演习]把初始卡组里的[加班耕种]全部替换成[|防护演习|]",
+        "Effect": "Transfer(Filter(Deck'(Name'Is'加班耕种));防护演习) # Exit"
+      },
+      {
+        "Description": "[加班耕种]拿回|加班耕种|",
+        "Effect": "Turn"
+      }
+    ]
+  },
+  {
+    "ID": "TransferBlood-3",
+    "Name": "选哪个呢",
+    "LimitStage": 0,
+    "Character": "Blood",
+    "Content": "青蛙点点头，认可了你的选择：\n<color=#62B2E0>“真是个诚实的好崽崽。”</color>",
+    "Choices": [
+      {
+        "Description": "[蛙给了你诚实的奖励]<color=#8ACF5C>+10<sprite=1></color>",
+        "Effect": "Global,Money,10 # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "SculpturePlus",
+    "Name": "经典时尚小雕像？",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "你在路边发现了一个地摊，上面摆了一堆青蛙雕像。\n<color=#62B2E0>“我这里是给青蛙雕像加工的。”</color>\n<color=#62B2E0>“要吗？便宜点给你。”</color>",
+    "Choices": [
+      {
+        "Description": "[加工雕像]<color=#DD4949>-100<sprite=1></color>，加工|青蛙雕像|（可以欠债）",
+        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0} Global,Money,-100 #  Turn"
+      },
+      {
+        "Description": "[要求回收]<color=#8ACF5C>+10<sprite=1></color>，<color=#DD4949>失去[|青蛙雕像|]</color>",
+        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Global,Money,10 # DestroyCard(Filter(Bag'(Name'Is'青蛙雕像))) # DestroyItem(Filter(Land'(Name'Is'青蛙雕像))) # DiscardDestroy(Name'Is'青蛙雕像;-1)  # Exit"
+      },
+      {
+        "Description": "[离开]",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "SculpturePlus-1",
+    "Name": "经典时尚小雕像？",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“想怎么加工？”</color>",
+    "Choices": [
+      {
+        "Description": "[我想要生长]<color=#8ACF5C>将[青蛙雕像]变为[|青苔青蛙雕像|]</color>",
+        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}   Transfer(Filter(Deck'(Name'Is'青蛙雕像));青苔青蛙雕像)  # Exit"
+      },
+      {
+        "Description": "[我想要钱]<color=#8ACF5C>将[青蛙雕像]变为[|金青蛙雕像|]</color>",
+        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Transfer(Filter(Deck'(Name'Is'青蛙雕像));金青蛙雕像)  # Exit"
+      },
+      {
+        "Description": "[我想要健康]<color=#8ACF5C>将[青蛙雕像]变为[|橙子青蛙雕像|]</color>",
+        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Transfer(Filter(Deck'(Name'Is'青蛙雕像));橙子青蛙雕像)  # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OrangeMagician",
+    "Name": "养魔法师还是要慎重",
+    "LimitStage": 23,
+    "Character": "Blood",
+    "Content": "<color=#62B2E0>“嘿！”</color>\n<color=#62B2E0>“你！”</color>\n<color=#62B2E0>“人！”</color>\n<color=#62B2E0>“养我！”</color>",
+    "Choices": [
+      {
+        "Description": "[好啊好啊]<color=#8ACF5C>获得[|橙魔法师|]</color>",
+        "Effect": "Turn"
+      },
+      {
+        "Description": "[不要不要]赶祂走",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "OrangeMagician-1",
+    "Name": "养魔法师还是要慎重",
+    "LimitStage": 23,
+    "Character": "Blood",
+    "Content": "你养祂花费了许多精力……",
+    "Choices": [
+      {
+        "Description": "[没办法，接着养]<color=#DD4949><sprite=0>上限-50%</color>，<color=#8ACF5C>留下[|橙魔法师|]</color>",
+        "Effect": "AddPendant(橙魔法师)  # Global,HealthLimit,-Operation(GetDataInt(Global:HealthLimit)*5/10) # Exit"
+      },
+      {
+        "Description": "[送走]<color=#DD4949>失去[|橙魔法师|]</color>",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fridge",
+    "Name": "这次是真冰箱",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "这天，你在路边\n遇到了一个有手有脚的……\n——冰箱！\n<color=#62B2E0>“你好！我是史诗级冰箱~”</color>\n<color=#62B2E0>“请问缺保镖吗~冰~”</color>\n<color=#62B2E0>“我可以当你的保镖哦~冰~”</color>",
+    "Choices": [
+      {
+        "Description": "[包吃包住]<color=#DD4949>下一年时间上限-1</color>，<color=#8ACF5C>获得[|冰箱|]</color>",
+        "Effect": "NextYear(Global,None,TimeLabelLimit,-1 : 1) #AddPendant(冰箱) # Exit"
+      },
+      {
+        "Description": "[用钱雇佣]<color=#DD4949>-200<sprite=1></color>，<color=#8ACF5C>获得[|冰箱|]</color>",
+        "Effect": "{Global,Money,BiggerOrEqual,200} Global,Money,-200 # AddPendant(冰箱) # Exit"
+      },
+      {
+        "Description": "[尝试用语言说服]30%概率<color=#8ACF5C>获得[|冰箱|]</color>",
+        "Effect": "Probability(30%MapEventTurn(Fridge-3Y;false)%70%MapEventTurn(Fridge-3N;false))"
+      },
+      {
+        "Description": "[雇不起]拒绝冰箱",
+        "Effect": "Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fridge-3Y",
+    "Name": "这次是真冰箱",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“感觉你们福利好好噢！冰~”</color>\n<color=#62B2E0>“我愿意免费加入~冰~”</color>",
+    "Choices": [
+      {
+        "Description": "[好耶]获得[|冰箱|]",
+        "Effect": "AddPendant(冰箱) # Exit"
+      }
+    ]
+  },
+  {
+    "ID": "Fridge-3N",
+    "Name": "这次是真冰箱",
+    "LimitStage": 23,
+    "Character": "All",
+    "Content": "<color=#62B2E0>“不要给我画饼噢~冰~”</color>\n<color=#62B2E0>“俺们不吃这套噢~冰~”</color>",
+    "Choices": [
+      {
+        "Description": "[离开]好吧",
+        "Effect": "Exit"
+      }
+    ]
+  }
+]

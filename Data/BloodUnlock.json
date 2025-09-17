@@ -1,0 +1,100 @@
+[
+  {
+    "Level": 1,
+    "NextLevelExp": 800,
+    "UnlockCardID": [
+      "Blood-4"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 2,
+    "NextLevelExp": 900,
+    "UnlockCardID": [
+      "Blood-27"
+    ],
+    "UnlockPendantID": []
+  },
+  {
+    "Level": 3,
+    "NextLevelExp": 1000,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Blood-27"
+    ]
+  },
+  {
+    "Level": 4,
+    "NextLevelExp": 1100,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Blood-36"
+    ]
+  },
+  {
+    "Level": 5,
+    "NextLevelExp": 1200,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-TimeSafe-3"
+    ]
+  },
+  {
+    "Level": 6,
+    "NextLevelExp": 1300,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-TimeSafe-8"
+    ]
+  },
+  {
+    "Level": 7,
+    "NextLevelExp": 1400,
+    "UnlockCardID": [
+      "Blood-14"
+    ],
+    "UnlockPendantID": [
+      "P-Blood-4"
+    ]
+  },
+  {
+    "Level": 8,
+    "NextLevelExp": 1600,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Blood-20"
+    ]
+  },
+  {
+    "Level": 9,
+    "NextLevelExp": 1800,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Spell-9"
+    ]
+  },
+  {
+    "Level": 10,
+    "NextLevelExp": 2000,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-TimeSafe-4"
+    ]
+  },
+  {
+    "Level": 11,
+    "NextLevelExp": 2400,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Spell-14"
+    ]
+  },
+  {
+    "Level": 12,
+    "NextLevelExp": 2600,
+    "UnlockCardID": [],
+    "UnlockPendantID": [
+      "P-Blood-38"
+    ]
+  }
+]

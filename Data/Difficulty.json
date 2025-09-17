@@ -1,0 +1,1035 @@
+[
+  {
+    "ID": "-1",
+    "Description": "休闲模式",
+    "Health": 35,
+    "HealthPunish": 3,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      11,
+      17,
+      18,
+      19,
+      25
+    ],
+    "CardPackPrices": [
+      10,
+      20,
+      40,
+      100,
+      100
+    ],
+    "PendantPrices": [
+      10,
+      20,
+      40,
+      100,
+      200
+    ],
+    "RefreshPriceInterval": 2,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 2,
+    "KPIDisasterMultiplier": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "KPIStageMultiplier": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      80,
+      150,
+      300,
+      300
+    ],
+    "DisasterAwardMoney": [
+      10,
+      20,
+      30,
+      30
+    ],
+    "NormalAwardMoney": [
+      10,
+      20,
+      30,
+      30
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "0",
+    "Description": "无",
+    "Health": 31,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      11,
+      17,
+      18,
+      19,
+      25
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 6,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.01,
+      0.02,
+      0.03,
+      0.03
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "NormalAwardMoney": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "1",
+    "Description": "血量小幅减少",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      11,
+      17,
+      18,
+      19,
+      25
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 6,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.01,
+      0.02,
+      0.03,
+      0.03
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "NormalAwardMoney": [
+      5,
+      10,
+      20,
+      20
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "2",
+    "Description": "年终奖金币减少",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      11,
+      17,
+      18,
+      19,
+      25
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.01,
+      0.02,
+      0.03,
+      0.03
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "3",
+    "Description": "初始地块减少",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.01,
+      0.02,
+      0.03,
+      0.03
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "4",
+    "Description": "KPI提升",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": true,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "5",
+    "Description": "时间护盾失效",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      30,
+      30,
+      0,
+      10,
+      30,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "6",
+    "Description": "灾年出现频率提升",
+    "Health": 26,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "7",
+    "Description": "血量减少",
+    "Health": 21,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 7,
+    "KPIDisasterMultiplier": [
+      0.03,
+      0.05,
+      0.08,
+      0.08
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "8",
+    "Description": "灾年KPI提升",
+    "Health": 21,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "NormalAwardMoney": [
+      3,
+      5,
+      10,
+      10
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "9",
+    "Description": "年终奖金币消失",
+    "Health": 21,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.1,
+      0.15,
+      0.22,
+      0.22
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "NormalAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "10",
+    "Description": "KPI大幅提升",
+    "Health": 21,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.2,
+      0.35,
+      0.45,
+      0.45
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "NormalAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "11",
+    "Description": "血量大幅减少",
+    "Health": 16,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.2,
+      0.35,
+      0.45,
+      0.45
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "NormalAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "DisasterStageStart": 0,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "12",
+    "Description": "灾年更高难度",
+    "Health": 16,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.2,
+      0.35,
+      0.45,
+      0.45
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "NormalAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "DisasterStageStart": 1,
+    "BossStageStart": 0
+  },
+  {
+    "ID": "13",
+    "Description": "大灾变更高难度",
+    "Health": 16,
+    "HealthPunish": 5,
+    "MapTypeRate": [
+      27,
+      23,
+      0,
+      10,
+      40,
+      0
+    ],
+    "OriginLandIndex": [
+      17,
+      18,
+      19
+    ],
+    "CardPackPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "PendantPrices": [
+      20,
+      30,
+      70,
+      150,
+      200
+    ],
+    "RefreshPriceInterval": 5,
+    "HealthPrice": 0,
+    "HealthPricePlusInterval": 8,
+    "KPIDisasterMultiplier": [
+      0.05,
+      0.1,
+      0.15,
+      0.15
+    ],
+    "KPIStageMultiplier": [
+      0.2,
+      0.35,
+      0.45,
+      0.45
+    ],
+    "HaveHealthShield": false,
+    "BossAwardMoney": [
+      50,
+      100,
+      200,
+      200
+    ],
+    "DisasterAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "NormalAwardMoney": [
+      0,
+      0,
+      0
+    ],
+    "DisasterStageStart": 1,
+    "BossStageStart": 1
+  }
+]
