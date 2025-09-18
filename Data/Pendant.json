@@ -1329,7 +1329,7 @@
     "Name": "石雕任务",
     "Level": 2,
     "EffectDescription": "打出300个|石头|：石头获得<sprite=1>+1[还剩1{CountVal:300}张]",
-    "EffectString": "Watch(Condition,Name;Is;石头) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,300}[Filter(CardCollection'(Name'Is'石头)),SpecialVal,1][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Condition,Name;Is;石头) <{SelfPendant,SpecialVal,BiggerOrEqual,300}[Filter(CardCollection'(Name'Is'石头)),SpecialVal,1][SelfPendant,CountVal,1][SelfPendant,SpecialVal,-300]> # Gain <[Filter(CardCollection'(Name'Is'石头)),SpecialVal,GetDataInt(SelfPendant:CountVal)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
