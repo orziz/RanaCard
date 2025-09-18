@@ -1136,8 +1136,8 @@
     "Combo": "B-Num",
     "Name": "橙色硬币",
     "Level": 5,
-    "EffectDescription": "本回合中每失去20点<sprite=0>：打出5张|硬币|[还剩1{SpecialVal:20}点]",
-    "EffectString": "Watch(GlobalNum,HealthSub) <{SelfPendant,SpecialVal,BiggerOrEqual,20}[HandIn(硬币;Operation(GetDataInt(SelfPendant:SpecialVal)/20*5))][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%20)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectDescription": "本回合中每失去20点<sprite=0>：+10<sprite=1>[还剩1{SpecialVal:20}点]",
+    "EffectString": "Watch(GlobalNum,HealthSub) <{SelfPendant,SpecialVal,BiggerOrEqual,20}[Global,Money,Operation(GetDataInt(SelfPendant:SpecialVal)/20*10)][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%20)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
