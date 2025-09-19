@@ -2624,7 +2624,7 @@
       "SpecialVal": 0,
       "CountVal": 0,
       "LabelVal": 0,
-      "EffectString": "RoundEnd <[BagIn(精工草料;Operation( Tally(LandNoNameRepeat'(Type'Is'Animal | Type'Is'Nest))/2 +1  ))]>",
+      "EffectString": "RoundEnd <[BagIn(精工草料;Operation( Tally(AroundNoNameRepeat'(Type'Is'Animal | Type'Is'Nest))/2 +1  ))]>",
       "TemplateEffectString": "",
       "EffectParameters": [],
       "OriginEffectParameters": [],

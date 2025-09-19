@@ -81,7 +81,7 @@
     "Name": "空空如也",
     "Level": 2,
     "EffectDescription": "回合结束：如果袋子里没有牌[衍生物除外],+5<sprite=1>",
-    "EffectString": "RoundEnd <{Global,Tally(Bag'(Type'IsNot'Derivative)),Equal,0}[Global,Money,5]>",
+    "EffectString": "RoundEnd <{Global,Tally(Bag'(Category'IsNot'Derivative)),Equal,0}[Global,Money,5]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
