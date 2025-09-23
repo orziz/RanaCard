@@ -1631,6 +1631,56 @@
     "EffectDescription": "KPI+40%；获得1个|点金藤<sprite=2>|；时间刻度上限-2",
     "EffectString": "Gain <[BagIn(点金藤<sprite=2>;1)][Global,TimeLabelLimit,-2][Global,KPIMultiplier,0.4]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[Global,TimeLabelLimit,2][DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]>",
     "SpecialVal": 0
+  },
+  {
+    "ID": "Frog1",
+    "Character": "Endless",
+    "Combo": "Boss",
+    "Name": "降生",
+    "Level": 1,
+    "EffectDescription": "从天而降5块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;5)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "SpecialVal": 0
+  },
+  {
+    "ID": "Frog2",
+    "Character": "Endless",
+    "Combo": "Boss",
+    "Name": "降生",
+    "Level": 2,
+    "EffectDescription": "从天而降6块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;6)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "SpecialVal": 0
+  },
+  {
+    "ID": "Frog3",
+    "Character": "Endless",
+    "Combo": "Boss",
+    "Name": "降生",
+    "Level": 3,
+    "EffectDescription": "从天而降7块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;7)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "SpecialVal": 0
+  },
+  {
+    "ID": "Frog4",
+    "Character": "Endless",
+    "Combo": "Boss",
+    "Name": "降生",
+    "Level": 4,
+    "EffectDescription": "从天而降8块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;8)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "SpecialVal": 0
+  },
+  {
+    "ID": "Frog5",
+    "Character": "Endless",
+    "Combo": "Boss",
+    "Name": "降生",
+    "Level": 5,
+    "EffectDescription": "从天而降9块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;9)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "SpecialVal": 0
   }
 ]
 }

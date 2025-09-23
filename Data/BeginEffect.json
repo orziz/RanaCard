@@ -50,7 +50,7 @@
   {
     "ID": "Health1BlueCardPack",
     "EffectDescription": "初始生命值-30%，开一个蓝色卡牌包",
-    "EffectString": "Global,Health,-Operation(GetDataInt(Global:Health)*3/10 # OpenPack(Card;Small;2)",
+    "EffectString": "Global,Health,-Operation(GetDataInt(Global:Health)*3/10) # OpenPack(Card;Small;2)",
     "UnLocked": 0,
     "UnlockCondition": "",
     "StarCount": 10

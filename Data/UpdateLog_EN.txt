@@ -1,0 +1,49 @@
+V1.1.0 Changelog
+New Additions
+1. Added Massive Cataclysms [Descent] to Endless Mode.
+2. Added Settings - Gameplay - Maximum Number of Products on the Field to adjust Product play speed.
+3. Added Settings - Visuals - Hide Gold Animation.
+4. Added Settings - Visuals - Hide Product-to-Bag Animation.
+5. Added Trinket Pack refresh, enabling one refresh per trinket-pack opening.
+Adjustments & Optimizations
+1. [Bouillon Bag] now accurately shows its generated [Chicken Bouillon] cards.
+2. Slightly increased node count in Stage 3 for better progression.
+3. Streamlined auto-draw logic for [Temporary Time Scale Limit]: stops drawing when [Dangerous Cards] exceed 0.
+4. Enhanced visual design of select UI buttons for better clarity.
+5. Lowered sound effect volume for endgame scoring and story interface exits.
+6. Removed [Larva] and non-disaster-year [Bug] mechanics (e.g., Dozy Bug, Woodborer, Black Hole Bug, Dizzy Bug, Parasite, Leech Bug, Locust).
+7. Reworked [Imperial Jade] into a Product card with improved gold generation.
+8. Adjusted [Dewdrop Vending Machine] to an early/mid-game event, now allowing debt purchases.
+9. Optimized performance for [Full Gift] and [Chaos Mushroom] during Product generation.
+10. [Year-End Bonus] total count now supports a wider range of numerical values.
+11. Total Revenue during Endgame Scoring now supports a wider range of numerical values.
+12. Boosted overall game performance for smoother runtime.
+13. Upgraded [Field Zoom] display to support finer scale adjustments.
+14. Eliminated lag when accessing the play record interface.
+15. Reduced performance delays when loading/saving with many Products.
+16. Mitigated lag from stacking multiple [Pig]s.
+
+Bug Fixes
+1. Resolved message prompt icon showing default emoji (yellow bean face) incorrectly.
+2. Corrected gold accumulation displaying as negative during rapid increases.
+3. Fixed [Yearly Revenue] incorrectly showing as negative.
+4. Fixed [Yearly Revenue] values appearing as negative.
+5. Addressed [Yearly Revenue] numbers overflowing the display box when too long.
+6. Fixed inventory card details tooltip lingering on screen.
+7. Corrected A or D key presses unintentionally triggering [Field Zoom].
+8. Fixed [Chrysanthemum King] counter showing negative values.
+9. Removed deprecated [Sack of Gold] Trinket from Codex display.
+10. Aligned [Ore Bag] card description with its actual effect.
+11. Fixed abnormal field display when entering [Tutorial] right after game start.
+12. Ensured plant cards gray out (unusable) immediately after reaching Harvests This Turn limit.
+13. Fixed game entry failure after selecting [Starting Effects: Starting HP -30%, Receive a Blue Card Pack].
+14. Prevented field objects from being moved through the map interface after closing the menu.
+15. Fixed [Starting Effects] persisting incorrectly when switching save files.
+16. Corrected [Chicken Bouillon] Product icon displaying as [Dewdrop].
+17. Fixed [Primal Stone] event allowing two card deletions on second trigger.
+18. Corrected shop interface HP display exceeding max HP after event-driven HP cap changes.
+19. Fixed [Mill Two] card effect freezing game flow when no cards remain in the deck.
+20. Aligned [Bouillon Bag] activation timing with its description.
+21. Resolved issue where turns failed to end properly in specific cases.
+22. Resolved an issue where item attributes could incorrectly stack multiple times after upgrades or transformations.  
+23. Fixed a bug where the final unlockable content could be repeatedly triggered in certain scenarios.

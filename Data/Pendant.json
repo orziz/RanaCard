@@ -87,42 +87,6 @@
     "Introduction": "0"
   },
   {
-    "ID": "P-Neutral-9",
-    "Character": "All",
-    "Combo": "Neutral",
-    "Name": "一小袋钱",
-    "Level": 1,
-    "EffectDescription": "获得20<sprite=1>",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][Global,Money,20]>",
-    "SpecialVal": 0,
-    "CanGainByPack": 0,
-    "Introduction": "0"
-  },
-  {
-    "ID": "P-Neutral-10",
-    "Character": "All",
-    "Combo": "Neutral",
-    "Name": "一袋钱",
-    "Level": 2,
-    "EffectDescription": "获得30<sprite=1>",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][Global,Money,30]>",
-    "SpecialVal": 0,
-    "CanGainByPack": 0,
-    "Introduction": "0"
-  },
-  {
-    "ID": "P-Neutral-11",
-    "Character": "All",
-    "Combo": "Neutral",
-    "Name": "一大袋钱",
-    "Level": 3,
-    "EffectDescription": "获得50<sprite=1>",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][Global,Money,50]>",
-    "SpecialVal": 0,
-    "CanGainByPack": 0,
-    "Introduction": "0"
-  },
-  {
     "ID": "P-Neutral-12",
     "Character": "All",
     "Combo": "Neutral",
@@ -1140,18 +1104,6 @@
     "EffectString": "Watch(GlobalNum,HealthSub) <{SelfPendant,SpecialVal,BiggerOrEqual,20}[Global,Money,Operation(GetDataInt(SelfPendant:SpecialVal)/20*10)][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%20)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
-    "Introduction": "0"
-  },
-  {
-    "ID": "P-Chicken-1",
-    "Character": "Animal",
-    "Combo": "Chicken",
-    "Name": "来个鸡",
-    "Level": 1,
-    "EffectDescription": "获得1个|母鸡|",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(母鸡;1)]>",
-    "SpecialVal": 0,
-    "CanGainByPack": 0,
     "Introduction": "0"
   },
   {
@@ -2277,7 +2229,7 @@
     "Name": "寿桃",
     "Level": 2,
     "EffectDescription": "本回合中,每触发6时间值,全局生长+1[还剩1{SpecialVal:6}时间值]",
-    "EffectString": "Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[AllGrow(Operation(GetDataInt(SelfPendant:SpecialVal)/6)][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%6)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[AllGrow(Operation(GetDataInt(SelfPendant:SpecialVal)/6))][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%6)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
