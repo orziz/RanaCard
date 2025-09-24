@@ -2229,7 +2229,7 @@
     "Name": "寿桃",
     "Level": 2,
     "EffectDescription": "本回合中,每触发6时间值,全局生长+1[还剩1{SpecialVal:6}时间值]",
-    "EffectString": "Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[AllGrow(Operation(GetDataInt(SelfPendant:SpecialVal)/6)))][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%6)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[AllGrow(Operation(GetDataInt(SelfPendant:SpecialVal)/6))][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%6)]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"

@@ -612,21 +612,21 @@
   {
     "ID": "Dew",
     "Name": "露珠贩卖机",
-    "LimitStage": 23,
+    "LimitStage": 12,
     "Character": "All",
     "Content": "你在青蛙商店的角落里发现了一台从未见过的自动贩卖机。\n它破旧不堪，机身布满灰尘，仿佛已被遗忘多年。\n屏幕早已失去光泽，按钮也松松垮垮。\n\n是被淘汰已久的<color=#62B2E0>专属露珠</color>贩卖机",
     "Choices": [
       {
-        "Description": "[来1个吧]<color=#DD4949>-60<sprite=1></color>",
-        "Effect": "{Global,Money,BiggerOrEqual,60} Global,Money,-60 # Turn"
+        "Description": "[来1个吧]<color=#DD4949>-60<sprite=1>（可以欠债）</color>",
+        "Effect": "Global,Money,-60 # Turn"
       },
       {
-        "Description": "[来2个吧]<color=#DD4949>-120<sprite=1></color>",
-        "Effect": "{Global,Money,BiggerOrEqual,120} Global,Money,-120 #Turn"
+        "Description": "[来2个吧]<color=#DD4949>-120<sprite=1>（可以欠债）</color>",
+        "Effect": "Global,Money,-120 #Turn"
       },
       {
-        "Description": "[来3个吧]<color=#DD4949>-180<sprite=1></color>",
-        "Effect": "{Global,Money,BiggerOrEqual,180} Global,Money,-180 #Turn"
+        "Description": "[来3个吧]<color=#DD4949>-180<sprite=1>（可以欠债）</color>",
+        "Effect": "Global,Money,-180 #Turn"
       },
       {
         "Description": "[无视它]什么也不会发生",
@@ -637,7 +637,7 @@
   {
     "ID": "Dew-1",
     "Name": "露珠贩卖机",
-    "LimitStage": 23,
+    "LimitStage": 12,
     "Character": "All",
     "Content": "呲呲！\n1张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
     "Choices": [
@@ -650,7 +650,7 @@
   {
     "ID": "Dew-2",
     "Name": "露珠贩卖机",
-    "LimitStage": 23,
+    "LimitStage": 12,
     "Character": "All",
     "Content": "呲呲！\n2张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
     "Choices": [
@@ -663,7 +663,7 @@
   {
     "ID": "Dew-3",
     "Name": "露珠贩卖机",
-    "LimitStage": 23,
+    "LimitStage": 12,
     "Character": "All",
     "Content": "呲呲！\n3张专属露珠被机器吐了出来！\n随后机器冒出了青烟，再没有了反应",
     "Choices": [
