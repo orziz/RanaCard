@@ -1193,11 +1193,11 @@
     "Choices": [
       {
         "Description": "[加工雕像]<color=#DD4949>-100<sprite=1></color>，加工|青蛙雕像|（可以欠债）",
-        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0} Global,Money,-100 #  Turn"
+        "Effect": "Global,Money,-100 #  Turn"
       },
       {
         "Description": "[要求回收]<color=#8ACF5C>+10<sprite=1></color>，<color=#DD4949>失去[|青蛙雕像|]</color>",
-        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Global,Money,10 # DestroyCard(Filter(Bag'(Name'Is'青蛙雕像))) # DestroyItem(Filter(Land'(Name'Is'青蛙雕像))) # DiscardDestroy(Name'Is'青蛙雕像;-1)  # Exit"
+        "Effect": "{Global,Tally(Deck'(ID'Is'Event-3)),Bigger,0}  Global,Money,10 # DestroyCard(Filter(Bag'(ID'Is'Event-3))) # DestroyItem(Filter(Land'(ID'Is'Event-3))) # DiscardDestroy(ID'Is'Event-3;-1)  # Exit"
       },
       {
         "Description": "[离开]",
@@ -1214,15 +1214,15 @@
     "Choices": [
       {
         "Description": "[我想要生长]<color=#8ACF5C>将[青蛙雕像]变为[|青苔青蛙雕像|]</color>",
-        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}   Transfer(Filter(Deck'(Name'Is'青蛙雕像));青苔青蛙雕像)  # Exit"
+        "Effect": "{Global,Tally(Deck'(ID'Is'Event-3)),Bigger,0}   Transfer(Filter(Deck'(ID'Is'Event-3));青苔青蛙雕像)  # Exit"
       },
       {
         "Description": "[我想要钱]<color=#8ACF5C>将[青蛙雕像]变为[|金青蛙雕像|]</color>",
-        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Transfer(Filter(Deck'(Name'Is'青蛙雕像));金青蛙雕像)  # Exit"
+        "Effect": "{Global,Tally(Deck'(ID'Is'Event-3)),Bigger,0}  Transfer(Filter(Deck'(ID'Is'Event-3));金青蛙雕像)  # Exit"
       },
       {
         "Description": "[我想要健康]<color=#8ACF5C>将[青蛙雕像]变为[|橙子青蛙雕像|]</color>",
-        "Effect": "{Global,Tally(Deck'(Name'Is'青蛙雕像)),Bigger,0}  Transfer(Filter(Deck'(Name'Is'青蛙雕像));橙子青蛙雕像)  # Exit"
+        "Effect": "{Global,Tally(Deck'(ID'Is'Event-3)),Bigger,0}  Transfer(Filter(Deck'(ID'Is'Event-3));橙子青蛙雕像)  # Exit"
       }
     ]
   },

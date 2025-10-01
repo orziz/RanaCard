@@ -253,5 +253,10 @@
     "ID": "ACH_ForeseePass",
     "UnlockBySteamStatus": "false",
     "isUnlock": false
+  },
+  {
+    "ID": "ACH_Postcard",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
   }
 ]

@@ -8,7 +8,7 @@
     "Combo": "Disaster",
     "Name": "手铐",
     "Level": 1,
-    "EffectDescription": "每个回合法术出牌限制6张{CountVal:5}",
+    "EffectDescription": "每个回合法术出牌限制6张{CountVal:6}",
     "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,6}[Global,CannotPlayCard,=1]> # RoundBegin <[Global,CannotPlayCard,=0][SelfPendant,CountVal,=0]> #YearEnd <[Global,CannotPlayCard,=0]>",
     "SpecialVal": 0
   },
@@ -229,7 +229,7 @@
     "Name": "寄生虫",
     "Level": 3,
     "EffectDescription": "本回合中，每打出4张法术牌：获得1张寄生虫<sprite=2>{CountVal:4}",
-    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,5}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,4}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
     "SpecialVal": 0
   },
   {
@@ -239,7 +239,7 @@
     "Name": "寄生虫",
     "Level": 4,
     "EffectDescription": "KPI+10%；本回合中，每打出4张法术牌：获得1张寄生虫<sprite=2>{CountVal:4}",
-    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,5}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]><[Global,KPIMultiplier,=1]> # Gain <[Global,KPIMultiplier,0.1]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,4}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]><[Global,KPIMultiplier,=1]> # Gain <[Global,KPIMultiplier,0.1]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
     "SpecialVal": 0
   },
   {
@@ -249,7 +249,7 @@
     "Name": "寄生虫",
     "Level": 5,
     "EffectDescription": "KPI+20%；本回合中，每打出4张法术牌：获得1张寄生虫<sprite=2>{CountVal:4}",
-    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,5}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]><[Global,KPIMultiplier,=1]> # Gain <[Global,KPIMultiplier,0.2]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,4}[BagIn(寄生虫<sprite=2>;1)][SelfPendant,CountVal,=0]>  # YearEnd <[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))]><[DiscardDestroy(Name'Contain'<sprite=2>;-1)]><[Global,KPIMultiplier,=1]> # Gain <[Global,KPIMultiplier,0.2]>  # RoundEnd <[SelfPendant,CountVal,=0]>",
     "SpecialVal": 0
   },
   {
@@ -694,7 +694,7 @@
   },
   {
     "ID": "Exhaustion1",
-    "Character": "All",
+    "Character": "-Blood",
     "Combo": "Disaster",
     "Name": "力竭",
     "Level": 1,
@@ -704,7 +704,7 @@
   },
   {
     "ID": "Exhaustion2",
-    "Character": "All",
+    "Character": "-Blood",
     "Combo": "Disaster",
     "Name": "精疲力竭",
     "Level": 2,
@@ -714,7 +714,7 @@
   },
   {
     "ID": "Exhaustion3",
-    "Character": "All",
+    "Character": "-Blood",
     "Combo": "Disaster",
     "Name": "精疲力竭",
     "Level": 3,
@@ -724,7 +724,7 @@
   },
   {
     "ID": "Exhaustion4",
-    "Character": "All",
+    "Character": "-Blood",
     "Combo": "Disaster",
     "Name": "精疲力竭",
     "Level": 4,
@@ -734,7 +734,7 @@
   },
   {
     "ID": "Exhaustion5",
-    "Character": "All",
+    "Character": "-Blood",
     "Combo": "Disaster",
     "Name": "精疲力竭",
     "Level": 5,
@@ -1239,7 +1239,7 @@
     "Name": "扭蛋机",
     "Level": 1,
     "EffectDescription": "获得1张扭蛋机<sprite=2>和|穷酸种子<sprite=2>|；12回合后：若场上没有富饶种子<sprite=2>，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Contain'富饶种子<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-19)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1249,7 +1249,7 @@
     "Name": "扭蛋机",
     "Level": 2,
     "EffectDescription": "KPI+10%；获得1张扭蛋机<sprite=2>和|穷酸种子<sprite=2>|；12回合后：若场上没有富饶种子<sprite=2>，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.1]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Contain'富饶种子<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.1]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-19)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1259,7 +1259,7 @@
     "Name": "扭蛋机",
     "Level": 3,
     "EffectDescription": "KPI+20%；获得1张扭蛋机<sprite=2>和|穷酸种子<sprite=2>|；12回合后：若场上没有富饶种子<sprite=2>，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.2]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Contain'富饶种子<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.2]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-19)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1269,7 +1269,7 @@
     "Name": "扭蛋机",
     "Level": 4,
     "EffectDescription": "KPI+30%；获得1张扭蛋机<sprite=2>和|穷酸种子<sprite=2>|；12回合后：若场上没有富饶种子<sprite=2>，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.3]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Contain'富饶种子<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.3]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-19)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1279,7 +1279,7 @@
     "Name": "扭蛋机",
     "Level": 5,
     "EffectDescription": "KPI+50%；获得1张扭蛋机<sprite=2>和|穷酸种子<sprite=2>|；12回合后：若场上没有富饶种子<sprite=2>，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.5]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Contain'富饶种子<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(扭蛋机<sprite=2>;1)][BagIn(穷酸种子<sprite=2>;1)][Global,KPIMultiplier,0.5]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-19)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1539,7 +1539,7 @@
     "Name": "小毛球",
     "Level": 1,
     "EffectDescription": "获得1个|黑兔兔<sprite=2>|；12回合后：若地里没有星夜兔兔，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'星夜兔兔<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-15)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1549,7 +1549,7 @@
     "Name": "小毛球",
     "Level": 2,
     "EffectDescription": "KPI+10%；获得1个|黑兔兔<sprite=2>|；12回合后：若地里没有星夜兔兔，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.1]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'星夜兔兔<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.1]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-15)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1559,7 +1559,7 @@
     "Name": "小毛球",
     "Level": 3,
     "EffectDescription": "KPI+20%；获得1个|黑兔兔<sprite=2>|；12回合后：若地里没有星夜兔兔，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.2]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'星夜兔兔<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.2]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-15)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1569,7 +1569,7 @@
     "Name": "小毛球",
     "Level": 4,
     "EffectDescription": "KPI+30%；获得1个|黑兔兔<sprite=2>|；12回合后：若地里没有星夜兔兔，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.3]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'星夜兔兔<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.3]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-15)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1579,7 +1579,7 @@
     "Name": "小毛球",
     "Level": 5,
     "EffectDescription": "KPI+50%；获得1个|黑兔兔<sprite=2>|；12回合后：若地里没有星夜兔兔，-99999<sprite=0>",
-    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.5]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'星夜兔兔<sprite=2>)),Smaller,1}[Global,Health,-99999]>",
+    "EffectString": "Gain <[BagIn(黑兔兔<sprite=2>;1)][Global,KPIMultiplier,0.5]>  # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)][Global,KPIMultiplier,=1]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-15)),Smaller,1}[Global,Health,-99999]>",
     "SpecialVal": 0
   },
   {
@@ -1638,8 +1638,8 @@
     "Combo": "Boss",
     "Name": "降生",
     "Level": 1,
-    "EffectDescription": "从天而降5块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
-    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;5)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "EffectDescription": "从天而降4块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;4)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-27)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
     "SpecialVal": 0
   },
   {
@@ -1649,7 +1649,7 @@
     "Name": "降生",
     "Level": 2,
     "EffectDescription": "从天而降6块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
-    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;6)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;6)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-27)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
     "SpecialVal": 0
   },
   {
@@ -1658,8 +1658,8 @@
     "Combo": "Boss",
     "Name": "降生",
     "Level": 3,
-    "EffectDescription": "从天而降7块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
-    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;7)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "EffectDescription": "从天而降9块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;9)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-27)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
     "SpecialVal": 0
   },
   {
@@ -1668,8 +1668,8 @@
     "Combo": "Boss",
     "Name": "降生",
     "Level": 4,
-    "EffectDescription": "从天而降8块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
-    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;8)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "EffectDescription": "从天而降10块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;10)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-27)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
     "SpecialVal": 0
   },
   {
@@ -1678,8 +1678,8 @@
     "Combo": "Boss",
     "Name": "降生",
     "Level": 5,
-    "EffectDescription": "从天而降9块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
-    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;9)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(Name'Is'月亮陨石<sprite=2>)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
+    "EffectDescription": "从天而降12块月亮陨石<sprite=2>；获得1个|源初之卵<sprite=2>|；12回合后：地里若还有月亮陨石，-99999生命值",
+    "EffectString": "Gain <[RandomForcePlace(月亮陨石<sprite=2>;12)][HandIn(源初之卵<sprite=2>;1)]> # RoundEnd <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,12 && Global,Tally(Land'(ID'Is'Disaster-27)),Bigger,0}[Global,Health,-99999]> # YearEnd <[SelfPendant,SpecialVal,1]><{SelfPendant,SpecialVal,Equal,3}[DestroyCard(Filter(Bag'(Name'Contain'<sprite=2>)))][DestroyItem(Filter(Land'(Name'Contain'<sprite=2>)))][DiscardDestroy(Name'Contain'<sprite=2>;-1)]>",
     "SpecialVal": 0
   }
 ]

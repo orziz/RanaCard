@@ -24,6 +24,14 @@
     "StarCount": 3
   },
   {
+    "ID": "CardPack12pick1",
+    "EffectDescription": "开一个12选1卡包",
+    "EffectString": "OpenOneOfFourteen()",
+    "UnLocked": 0,
+    "UnlockCondition": "",
+    "StarCount": 5
+  },
+  {
     "ID": "HealthLimit6",
     "EffectDescription": "+6最大<sprite=0>",
     "EffectString": "Global,HealthLimit,6",

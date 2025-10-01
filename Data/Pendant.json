@@ -9,7 +9,7 @@
     "Name": "丰收之力",
     "Level": 4,
     "EffectDescription": "地里的植物每收成6次：随机使地里的1个植物收成[还剩1{SpecialVal:6}次]",
-    "EffectString": "Watch(Harvest,None) <{SelfPendant,SpecialVal,Equal,6}[TriggerItem(RandomRange(Filter(Land'(Type'Is'Plant)):1);Harvest;1)][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Harvest,None) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[TriggerItem(RandomRange(LandPlant:1);Harvest;1)][SelfPendant,SpecialVal,-6]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -44,8 +44,8 @@
     "Combo": "Neutral",
     "Name": "雨季",
     "Level": 5,
-    "EffectDescription": "回合结束：全局生长+1",
-    "EffectString": "RoundEnd <[AllGrow(1)]>",
+    "EffectDescription": "回合结束：全局生长+2",
+    "EffectString": "RoundEnd <[AllGrow(2)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -141,7 +141,7 @@
     "Name": "叶上露珠",
     "Level": 3,
     "EffectDescription": "地里植物每收成15次：获得1张|蒸发露珠|[还剩1{CountVal:15}次]",
-    "EffectString": "Watch(Harvest,None)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,15}[BagIn(蒸发露珠;1)][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Harvest,None)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,15}[BagIn(蒸发露珠;1)][SelfPendant,CountVal,-15]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -273,7 +273,7 @@
     "Name": "万丈光芒",
     "Level": 5,
     "EffectDescription": "阳光能够获得的生长值额外+1；获得1张|太阳花|",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(太阳花;1)]>  <[Filter(CardCollection'(Name'Is'阳光)),EffectPar1,1]>",
+    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(太阳花;1)]>  <[Filter(CardCollection'(ID'Is'Neutral-4)),EffectPar1,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -297,7 +297,7 @@
     "Name": "植物园",
     "Level": 3,
     "EffectDescription": "回合结束时,地里每有1个植物+1<sprite=1>",
-    "EffectString": "RoundEnd <[Global,Money,Tally(Land'(Type'Is'Plant))]>",
+    "EffectString": "RoundEnd <[Global,Money,GetDataInt(Global:PlantNum)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -309,7 +309,7 @@
     "Name": "满园春色",
     "Level": 2,
     "EffectDescription": "回合结束：若地里有6个植物,+5<sprite=1>",
-    "EffectString": "RoundEnd <{Global,Tally(Land'(Type'Is'Plant)),Bigger,5}[Global,Money,5]>",
+    "EffectString": "RoundEnd <{Global,GetDataInt(Global:PlantNum),Bigger,5}[Global,Money,5]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -477,7 +477,7 @@
     "Name": "多多益善",
     "Level": 4,
     "EffectDescription": "每获得10张牌：+5<sprite=1>[还剩1{SpecialVal:10}张]",
-    "EffectString": "Watch(BagIn,None) <{SelfPendant,SpecialVal,Equal,10}[SelfPendant,SpecialVal,=0][Global,Money,5]>",
+    "EffectString": "Watch(BagIn,None) <{SelfPendant,SpecialVal,BiggerOrEqual,10}[SelfPendant,SpecialVal,-10][Global,Money,5]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -501,7 +501,7 @@
     "Name": "亲和之力",
     "Level": 4,
     "EffectDescription": "每打出5个衍生物：随机获得1个1级衍生物[还剩1{SpecialVal:5}个]",
-    "EffectString": "Watch(Condition,Category;Is;Derivative) <{SelfPendant,SpecialVal,Equal,5}[SelfPendant,SpecialVal,-5][BagInDerivativeNoInsect(1;1)]>",
+    "EffectString": "Watch(Condition,Category;Is;Derivative) <{SelfPendant,SpecialVal,BiggerOrEqual,5}[SelfPendant,SpecialVal,-5][BagInDerivativeNoInsect(1;1)]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -525,7 +525,7 @@
     "Name": "壮壮奶",
     "Level": 2,
     "EffectDescription": "每打出6张|奶|：<sprite=0>+1[已打出1{SpecialVal}张]",
-    "EffectString": "Watch(Condition,Name;Is;奶)  <{SelfPendant,SpecialVal,Equal,6}[Global,Health,1][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,ID;Is;Animals-26)  <{SelfPendant,SpecialVal,BiggerOrEqual,6}[Global,Health,1][SelfPendant,SpecialVal,-6]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -549,7 +549,7 @@
     "Name": "动物园",
     "Level": 4,
     "EffectDescription": "回合结束：地里每有1动物+1<sprite=1>",
-    "EffectString": "RoundEnd <[Global,Money,Tally(Land'(Type'Is'Animal))]>",
+    "EffectString": "RoundEnd <[Global,Money,Operation(CountSpecialVal(Land'(Type'Is'Nest)) + Tally(Land'(Type'Is'Animal)) )]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -561,7 +561,7 @@
     "Name": "粑金龟小手套",
     "Level": 1,
     "EffectDescription": "|神圣粑金龟|回合结束时获得粑粑的数量+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'神圣粑金龟)),EffectPar4,1][Filter(CardCollection'(Name'Is'神圣粑金龟)),EffectPar2,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-10)),EffectPar4,1][Filter(CardCollection'(ID'Is'Animals-10)),EffectPar2,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -584,8 +584,8 @@
     "Combo": "Animals",
     "Name": "满赠",
     "Level": 5,
-    "EffectDescription": "每获得120个衍生物：随机获得10个衍生物[还剩1{CountVal:120}个]",
-    "EffectString": "Watch(BagIn,Category:Derivative) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,120}[SelfPendant,CountVal,=0][BagInDerivativeNoInsect(10)]>",
+    "EffectDescription": "每获得40个衍生物：+10金币[还剩1{CountVal:40}个]",
+    "EffectString": "Watch(BagIn,Category:Derivative) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,40}[SelfPendant,CountVal,-40][Global,Money,10]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -597,7 +597,7 @@
     "Name": "好粑粑",
     "Level": 5,
     "EffectDescription": "|粑粑|额外+2<sprite=1>",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'粑粑)),EffectString,\"Play <[Global,Money,2]>\"]> # Watch(Condition,Name;Is;粑粑) <[SelfPendant,SpecialVal,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Neutral-1)),EffectString,\"+Play <[Global,Money,2]>\"]> # Watch(Condition,ID;Is;Neutral-1) <[SelfPendant,SpecialVal,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -609,7 +609,7 @@
     "Name": "吃多多拉多多",
     "Level": 3,
     "EffectDescription": "|羊羊|回合结束时获得粑粑的数量+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'羊羊)),EffectPar1,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-30)),EffectPar1,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -621,7 +621,7 @@
     "Name": "牧草改良",
     "Level": 2,
     "EffectDescription": "|牧草|的生长周期-1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'牧草)),GrowPeriod,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-14)),GrowPeriod,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -633,7 +633,7 @@
     "Name": "牧草经济",
     "Level": 1,
     "EffectDescription": "|牧草|收成时额外+1<sprite=1>",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'牧草)),HarvestIncome,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-14)),HarvestIncome,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -645,7 +645,7 @@
     "Name": "揠牧草助长",
     "Level": 1,
     "EffectDescription": "|牧草|生长周期+1,收成时额外+2<sprite=1>",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'牧草)),GrowPeriod,1][Filter(CardCollection'(Name'Contain'牧草 & Type'Is'Plant)),HarvestIncome,2]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-14)),GrowPeriod,1][Filter(CardCollection'(ID'Is'Animals-14)),HarvestIncome,2]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -657,7 +657,7 @@
     "Name": "牛牛养殖场",
     "Level": 1,
     "EffectDescription": "每40个回合：|牛牛|回合结束时额外获得1个奶[还剩1{CountVal:40}个回合]",
-    "EffectString": "RoundEnd <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,40}[SelfPendant,SpecialVal,1][Filter(CardCollection'(Name'Is'牛牛)),EffectPar3,1][SelfPendant,CountVal,-40]>   # Gain <[Filter(CardCollection'(Name'Is'牛牛)),EffectPar3,GetDataInt(SelfPendant:SpecialVal)]>",
+    "EffectString": "RoundEnd <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,40}[SelfPendant,SpecialVal,1][Filter(CardCollection'(ID'Is'Animals-9)),EffectPar3,1][SelfPendant,CountVal,-40]>   # Gain <[Filter(CardCollection'(ID'Is'Animals-9)),EffectPar3,GetDataInt(SelfPendant:SpecialVal)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -669,7 +669,7 @@
     "Name": "羊羊养殖场",
     "Level": 1,
     "EffectDescription": "每40个回合：|羊羊|回合结束时额外获得1个粑粑[还剩1{CountVal:40}个回合]",
-    "EffectString": "RoundEnd <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,40}[SelfPendant,SpecialVal,1][Filter(CardCollection'(Name'Is'羊羊)),EffectPar1,1][SelfPendant,CountVal,-40]>   # Gain <[Filter(CardCollection'(Name'Is'羊羊)),EffectPar1,GetDataInt(SelfPendant:SpecialVal)]>",
+    "EffectString": "RoundEnd <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,40}[SelfPendant,SpecialVal,1][Filter(CardCollection'(ID'Is'Animals-30)),EffectPar1,1][SelfPendant,CountVal,-40]>   # Gain <[Filter(CardCollection'(ID'Is'Animals-30)),EffectPar1,GetDataInt(SelfPendant:SpecialVal)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -681,7 +681,7 @@
     "Name": "奶瓶",
     "Level": 3,
     "EffectDescription": "|奶|获得的<sprite=1>+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'奶)),EffectPar1,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-26)),EffectPar1,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -693,7 +693,7 @@
     "Name": "挤牛奶",
     "Level": 3,
     "EffectDescription": "|牛牛|生成的奶数量+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'牛牛)),EffectPar3,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-9)),EffectPar3,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -705,7 +705,7 @@
     "Name": "鲜奶贸易",
     "Level": 4,
     "EffectDescription": "|奶|获得的<sprite=1>+1；回合结束：获得2个|奶|",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'奶)),EffectPar1,1]> # RoundEnd <[BagIn(奶;2)]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-26)),EffectPar1,1]> # RoundEnd <[BagIn(奶;2)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -717,7 +717,7 @@
     "Name": "羊奶工厂",
     "Level": 2,
     "EffectDescription": "|羊羊|回合结束时获得1个奶",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'羊羊)),EffectString,\"+RoundEnd <[BagIn(奶;1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-30)),EffectString,\"+RoundEnd <[BagIn(奶;1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -729,7 +729,7 @@
     "Name": "牛粑粑工厂",
     "Level": 2,
     "EffectDescription": "|牛牛|回合结束时获得1个粑粑",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'牛牛)),EffectString,\"+RoundEnd <[BagIn(粑粑;1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-9)),EffectString,\"+RoundEnd <[BagIn(粑粑;1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -753,7 +753,7 @@
     "Name": "羊羊工资",
     "Level": 1,
     "EffectDescription": "|羊羊|每获得1粑粑+1<sprite=1>",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'羊羊)),EffectString,\"+RoundEnd <[Global,Money,GetDataInt(Self:EffectPar1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Animals-30)),EffectString,\"+RoundEnd <[Global,Money,GetDataInt(Self:EffectPar1)]>\"]> # Watch(Trigger,RoundEnd) <[SelfPendant,SpecialVal,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -801,7 +801,7 @@
     "Name": "钱钱叶片",
     "Level": 2,
     "EffectDescription": "打出|酸酸叶片|时额外+1<sprite=1>",
-    "EffectString": "Watch(Condition,Name;Is;酸酸叶片) <[Global,Money,1]>",
+    "EffectString": "Watch(Condition,ID;Is;Blood-12) <[Global,Money,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -837,7 +837,7 @@
     "Name": "法术肥料增益",
     "Level": 2,
     "EffectDescription": "将|法术肥料|的时间值变为1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'法术肥料)),TimeLabel,=1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Spell-3)),TimeLabel,=1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -897,7 +897,7 @@
     "Name": "超强叶草",
     "Level": 4,
     "EffectDescription": "酸酸叶片能够回复的<sprite=0>+2；获得1张|二叶草|",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(二叶草;1)]>  <[Filter(CardCollection'(Name'Is'酸酸叶片)),EffectPar1,2]>",
+    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(二叶草;1)]>  <[Filter(CardCollection'(ID'Is'Blood-12)),EffectPar1,2]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -993,7 +993,7 @@
     "Name": "橙汁泵任务",
     "Level": 1,
     "EffectDescription": "总计失去700次<sprite=0>,获得|高效橙汁泵|；销毁自身[还剩1{CountVal:700}次]",
-    "EffectString": "Watch(GlobalTimes,HealthSub) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,700}[BagIn(高效橙汁泵;1)][DestroyPendant()]>",
+    "EffectString": "Watch(GlobalTimes,HealthSub) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,700}[BagIn(高效橙汁泵;1)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1065,7 +1065,7 @@
     "Name": "棘液草镀金",
     "Level": 1,
     "EffectDescription": "每失去500次<sprite=0>：获得1个|金棘液草|[还剩1{CountVal:500}次]",
-    "EffectString": "Watch(GlobalTimes,HealthSub) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,500}[BagIn(金棘液草;1)][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(GlobalTimes,HealthSub) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,500}[BagIn(金棘液草;1)][SelfPendant,CountVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1089,7 +1089,7 @@
     "Name": "生命力量",
     "Level": 4,
     "EffectDescription": "本回合中,每失去3次<sprite=0>：获得1临时时间[还剩1{SpecialVal:3}次]",
-    "EffectString": "Watch(GlobalTimes,HealthSub)  <{SelfPendant,SpecialVal,Equal,3}[SelfPendant,SpecialVal,=0][Global,TempTimeLabelLimit,1]> #RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(GlobalTimes,HealthSub)  <{SelfPendant,SpecialVal,BiggerOrEqual,3}[SelfPendant,SpecialVal,-3][Global,TempTimeLabelLimit,1]> #RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1113,7 +1113,7 @@
     "Name": "鸡蛋保温箱",
     "Level": 2,
     "EffectDescription": "|鸡蛋|变为母鸡的概率+10%",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Contain'鸡蛋 & Category'Is'Derivative)),EffectPar2,10][Filter(CardCollection'(Name'Contain'鸡蛋 & Category'Is'Derivative)),EffectPar3,-10]>",
+    "EffectString": "Gain <[Filter(CardCollection'(Name'Contain'鸡蛋 & Category'Is'Derivative)),EffectPar3,10][Filter(CardCollection'(Name'Contain'鸡蛋 & Category'Is'Derivative)),EffectPar4,-10]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1125,7 +1125,7 @@
     "Name": "母鸡粑粑",
     "Level": 1,
     "EffectDescription": "每打出6个鸡蛋获得1个|粑粑|[还剩1{SpecialVal:6}张]",
-    "EffectString": "Watch(Condition,Name;Contain;鸡蛋) <{SelfPendant,SpecialVal,Equal,6}[BagIn(粑粑;1)][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Name;Contain;鸡蛋) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[BagIn(粑粑;1)][SelfPendant,SpecialVal,-6]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1137,7 +1137,7 @@
     "Name": "蛋壳堆肥",
     "Level": 5,
     "EffectDescription": "每打出8个衍生物随机使一个植物生长+1[还剩1{SpecialVal:8}张]",
-    "EffectString": "Watch(Condition,Category;Is;Derivative) <{SelfPendant,SpecialVal,Equal,8}[RandomGrow(1)][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Derivative) <{SelfPendant,SpecialVal,BiggerOrEqual,8}[RandomGrow(1)][SelfPendant,SpecialVal,-8]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1149,7 +1149,7 @@
     "Name": "健康早餐",
     "Level": 2,
     "EffectDescription": "每打出6个鸡蛋获得1个|奶|[还剩1{SpecialVal:6}张]",
-    "EffectString": "Watch(Condition,Name;Contain;鸡蛋) <{SelfPendant,SpecialVal,Equal,6}[BagIn(奶;1)][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Name;Contain;鸡蛋) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[BagIn(奶;1)][SelfPendant,SpecialVal,-6]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1173,7 +1173,7 @@
     "Name": "矿矿包工头",
     "Level": 4,
     "EffectDescription": "|镐子|可以额外触发3个矿洞",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'镐子)),EffectPar1,3]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-4)),EffectPar2,3]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1185,7 +1185,7 @@
     "Name": "加强镐子",
     "Level": 2,
     "EffectDescription": "|镐子|可以额外触发1个矿洞",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'镐子)),EffectPar1,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-4)),EffectPar2,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1197,7 +1197,7 @@
     "Name": "熔炉任务",
     "Level": 1,
     "EffectDescription": "打出30个矿石：获得|熔炉制造厂1|；销毁自身[还剩1{SpecialVal:30}个]",
-    "EffectString": "Watch(Condition,Type;Is;Mineral) <{SelfPendant,SpecialVal,Equal,30}[BagIn(熔炉制造厂1;1)][DestroyPendant()]>",
+    "EffectString": "Watch(Condition,Type;Is;Mineral) <{SelfPendant,SpecialVal,BiggerOrEqual,30}[BagIn(熔炉制造厂1;1)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1245,7 +1245,7 @@
     "Name": "矿洞链接",
     "Level": 4,
     "EffectDescription": "回合结束：地里每有3个|矿洞|，获得1个矿物包",
-    "EffectString": "RoundEnd <[BagIn(矿物包;Tally(Land'(Name'Is'矿洞)))]>",
+    "EffectString": "RoundEnd <[BagIn(矿物包;Tally(Land'(ID'Is'Mining-3)))]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1257,7 +1257,7 @@
     "Name": "矿洞堆肥",
     "Level": 2,
     "EffectDescription": "|矿洞|每产出1个矿物包：使周围植物生长+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'矿洞)),EffectString,\"+RoundEnd <{Global,Operation(GetDataInt(Self:HarvestIncome)/1),Bigger,0}[Filter(Around'(Type'Is'Plant)),Growth,Operation(GetDataInt(Self:HarvestIncome)/1)][Self,HarvestIncome,=Operation(GetDataInt(Self:HarvestIncome) % 1)]>\"]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-3)),EffectString,\"+RoundEnd <{Global,Operation(GetDataInt(Self:HarvestIncome)/1),Bigger,0}[Filter(Around'(Type'Is'Plant)),Growth,Operation(GetDataInt(Self:HarvestIncome)/1)][Self,HarvestIncome,=Operation(GetDataInt(Self:HarvestIncome) % 1)]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1281,7 +1281,7 @@
     "Name": "石雕任务",
     "Level": 2,
     "EffectDescription": "打出300个|石头|：石头获得<sprite=1>+1[还剩1{SpecialVal:300}张]",
-    "EffectString": "Watch(Condition,Name;Is;石头) <{SelfPendant,SpecialVal,BiggerOrEqual,300}[Filter(CardCollection'(Name'Is'石头)),SpecialVal,1][SelfPendant,CountVal,1][SelfPendant,SpecialVal,-300]> # Gain <[Filter(CardCollection'(Name'Is'石头)),SpecialVal,GetDataInt(SelfPendant:CountVal)]>",
+    "EffectString": "Watch(Condition,ID;Is;Mining-6) <{SelfPendant,SpecialVal,BiggerOrEqual,300}[Filter(CardCollection'(ID'Is'Mining-6)),SpecialVal,1][SelfPendant,CountVal,1][SelfPendant,SpecialVal,-300]> # Gain <[Filter(CardCollection'(ID'Is'Mining-6)),SpecialVal,GetDataInt(SelfPendant:CountVal)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1293,7 +1293,7 @@
     "Name": "石石拳花",
     "Level": 2,
     "EffectDescription": "|石拳花|收成时额外获得1个石头",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'石拳花)),EffectPar1,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-30)),EffectPar1,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1305,7 +1305,7 @@
     "Name": "点石成金",
     "Level": 4,
     "EffectDescription": "每打出50个矿石,获得1个|金矿石|[还剩1{CountVal:50}张]",
-    "EffectString": "Watch(Condition,Type;Is;Mineral) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,50}[SelfPendant,CountVal,-50][HandIn(金矿石;1)]>",
+    "EffectString": "Watch(Condition,Type;Is;Mineral) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,50}[SelfPendant,CountVal,-50][BagIn(金矿石;1)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1317,7 +1317,7 @@
     "Name": "点石成钻",
     "Level": 5,
     "EffectDescription": "每打出50个矿石,获得1个|钻矿石|[还剩1{CountVal:50}张]",
-    "EffectString": "Watch(Condition,Type;Is;Mineral) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,50}[SelfPendant,CountVal,-50][HandIn(钻矿石;1)]>",
+    "EffectString": "Watch(Condition,Type;Is;Mineral) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,50}[SelfPendant,CountVal,-50][BagIn(钻矿石;1)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1341,7 +1341,7 @@
     "Name": "八星八钻",
     "Level": 4,
     "EffectDescription": "钻矿石获得的<sprite=1>数量x1.5；年开始时：获得1个|钻矿石|",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'钻矿石)),SpecialVal,*1.5]> # YearBegin <[BagIn(钻矿石;1)]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-11)),SpecialVal,*1.5]> # YearBegin <[BagIn(钻矿石;1)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1353,7 +1353,7 @@
     "Name": "形状漂亮",
     "Level": 2,
     "EffectDescription": "打出|石头|时有30%概率获得的<sprite=1>数量x2",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'石头)),EffectString,\"Play <[Probability(30%Global,Money,GetDataInt(SelfCard:SpecialVal)%)]>\"]> # Watch(Condition,Name;Is;石头) <[SelfPendant,SpecialVal,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-6)),EffectString,\"Play <[Probability(30%Global,Money,GetDataInt(SelfCard:SpecialVal)%)]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1389,7 +1389,7 @@
     "Name": "双倍矿洞",
     "Level": 4,
     "EffectDescription": "|矿洞|回合结束时额外获得1个矿物包",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'矿洞)),EffectString,\"RoundEnd <[BagIn(矿物包;1)][Self,HarvestIncome,1]>\"]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-3)),EffectString,\"RoundEnd <[BagIn(矿物包;1)][Self,HarvestIncome,1]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1425,7 +1425,7 @@
     "Name": "矿物探测仪",
     "Level": 2,
     "EffectDescription": "|矿物包|额外获得1个矿石",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'矿物包)),EffectPar2,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Mining-5)),EffectPar2,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1461,7 +1461,7 @@
     "Name": "湿润蘑菇",
     "Level": 5,
     "EffectDescription": "每打出1|露珠|,随机使6个带有蘑菇字样的植物生长+1",
-    "EffectString": "Watch(Condition,Name;Contain;露珠) <[RandomRange(Filter(Land'(Name'Contain'蘑菇 & Type'Is'Plant)):6),Growth,1]>",
+    "EffectString": "Watch(Condition,Name;Contain;露珠) <{Global,MushroomNum,Bigger,0}[RandomRange(LandMushroom:6),Growth,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1473,7 +1473,7 @@
     "Name": "蘑菇修炼",
     "Level": 1,
     "EffectDescription": "地里带有蘑菇字样的植物收成200次：其生长周期+1,给其他植物提供的生长值额外+1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Contain'蘑菇 & Type'Is'Plant & EffectString'Contain'Growth)),EffectString,\"+Harvest <[Self,CountVal,1]><{Self,CountVal,Equal,200}[Self,EffectPar1,1][Self,GrowPeriod,1][Self,CountVal,=0]>\"]>",
+    "EffectString": "Gain <[Filter(CardCollection'(Name'Contain'蘑菇 & Type'Is'Plant & EffectString'Contain'Growth)),EffectString,\"+Harvest <[Self,CountVal,1]><{Self,CountVal,BiggerOrEqual,200}[Self,EffectPar1,1][Self,GrowPeriod,1][Self,CountVal,-200]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1533,7 +1533,7 @@
     "Name": "壮壮竹子",
     "Level": 2,
     "EffectDescription": "竹子收成<sprite=1>+1,|竹子|变为竹林所需的收成次数减少为12次",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'竹子)),HarvestIncome,1][Filter(CardCollection'(Name'Is'竹子)),SpecialVal,-4][Filter(CardCollection'(Name'Is'竹子)),EffectPar2,-4][Transfer(Filter(CardCollection'(Name'Is'竹子&SpecialVal'SmallerOrEqual'0));竹林)]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Panda-2)),HarvestIncome,1][Filter(CardCollection'(ID'Is'Panda-2)),SpecialVal,-4][Filter(CardCollection'(ID'Is'Panda-2)),EffectPar2,-4][Transfer(Filter(CardCollection'(ID'Is'Panda-2&SpecialVal'SmallerOrEqual'0));竹林)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1545,7 +1545,7 @@
     "Name": "熊猫任务",
     "Level": 1,
     "EffectDescription": "回合结束：当地里拥有8个竹子\\竹林时,获得|熊猫|；销毁自身",
-    "EffectString": "RoundEnd <{Global,Tally(Land'(Name'Is'竹子 | Name'Is'竹林)),BiggerOrEqual,8}[BagIn(熊猫;1)][DestroyPendant()]>",
+    "EffectString": "RoundEnd <{Global,Tally(Land'(ID'Is'Panda-2 | ID'Is'Panda-3)),BiggerOrEqual,8}[BagIn(熊猫;1)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1557,7 +1557,7 @@
     "Name": "熊猫竹林",
     "Level": 2,
     "EffectDescription": "回合结束：当地里有6个竹林时,销毁它们,生成1个|熊猫保护区|；销毁自身",
-    "EffectString": "RoundEnd <{Global,Tally(Land'(Name'Is'竹林)),BiggerOrEqual,6}[DestroyItem(RandomRange(Filter(Land'(Name'Is'竹林)):5))][Transfer(RandomRange(Filter(Land'(Name'Is'竹林)):1);熊猫保护区)][DestroyPendant()]>",
+    "EffectString": "RoundEnd <{Global,Tally(Land'(ID'Is'Panda-3)),BiggerOrEqual,6}[DestroyItem(RandomRange(Filter(Land'(ID'Is'Panda-3)):5))][Transfer(RandomRange(Filter(Land'(ID'Is'Panda-3)):1);熊猫保护区)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1567,9 +1567,9 @@
     "Character": "StrongGrow",
     "Combo": "Panda",
     "Name": "窜天竹",
-    "Level": 2,
-    "EffectDescription": "地里竹子每收成200次，获得1只|熊猫|[还剩2{SpecialVal:200}次]",
-    "EffectString": "Watch(Harvest,Name:竹子) <{SelfPendant,SpecialVal,BiggerOrEqual,200}[BagIn(熊猫;1)][SelfPendant,SpecialVal,-200]>",
+    "Level": 3,
+    "EffectDescription": "地里竹子每收成300次，获得1只|熊猫|[还剩2{SpecialVal:200}次]",
+    "EffectString": "Watch(Harvest,ID:Panda-2) <{SelfPendant,SpecialVal,BiggerOrEqual,300}[BagIn(熊猫;1)][SelfPendant,SpecialVal,-300]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1581,7 +1581,7 @@
     "Name": "熊猫繁荣",
     "Level": 5,
     "EffectDescription": "获得1只熊猫,|熊猫|周围的植物收成<sprite=1>+1",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(熊猫;1)]><[Filter(CardCollection'(Name'Is'熊猫)),EffectString,\" Buff <[Buff(Around,Type;Is;Plant,HarvestIncome,1)]>\"]>",
+    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(熊猫;1)]><[Filter(CardCollection'(ID'Is'Panda-5)),EffectString,\" Buff <[Buff(Around,Type;Is;Plant,HarvestIncome,1)]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1605,7 +1605,7 @@
     "Name": "茂密竹林",
     "Level": 3,
     "EffectDescription": "回合结束：随机使地里3个竹林收成",
-    "EffectString": "RoundEnd <[TriggerItem(RandomRange(Filter(Land'(Name'Is'竹林)):3);Harvest;1)]>",
+    "EffectString": "RoundEnd <[TriggerItem(RandomRange(Filter(Land'(ID'Is'Panda-3)):3);Harvest;1)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1617,7 +1617,7 @@
     "Name": "熊猫粑粑",
     "Level": 3,
     "EffectDescription": "|熊猫|回合开始时随机触发周围2个植物的收成效果",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'熊猫)),EffectString,\"RoundBegin <[TriggerItem(RandomRange(Filter(Around'(Type'Is'Plant)):2);Harvest;1)]>\"]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Panda-5)),EffectString,\"RoundBegin <[TriggerItem(RandomRange(Filter(Around'(Type'Is'Plant)):2);Harvest;1)]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1641,7 +1641,7 @@
     "Name": "兔兔太多怎么办",
     "Level": 3,
     "EffectDescription": "回合结束：地里每有1只|兔兔|+2<sprite=1>",
-    "EffectString": "RoundEnd <[Global,Money,Operation( Tally(Land'(Name'Is'兔兔)) + CountSpecialVal(Land'(Type'Is'Nest & Name'Contain'兔)) * 2)]>",
+    "EffectString": "RoundEnd <[Global,Money,Operation( Tally(Land'(ID'Is'\"Rabbit-1\")) + CountSpecialVal(Land'(Type'Is'Nest & Name'Contain'兔)) * 2)]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1653,7 +1653,7 @@
     "Name": "雨露茄培植",
     "Level": 2,
     "EffectDescription": "|雨露茄|对雨露字样的植物提供的<sprite=1>加成额外+1<sprite=1>",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'雨露茄)),EffectPar1,1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'Rain-4)),EffectPar1,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1665,7 +1665,7 @@
     "Name": "雨露改良",
     "Level": 5,
     "EffectDescription": "回合结束：获得1张|人工降雨|；全局生长：带有雨露字样的植物额外+1生长值",
-    "EffectString": "RoundEnd <[BagIn(人工降雨;1)]> # Watch(GlobalEvent,AllGrow) <[Filter(Land'(Name'Contain'雨露 | Type'Is'Plant)),Growth,1]>",
+    "EffectString": "RoundEnd <[BagIn(人工降雨;1)]> # Watch(GlobalEvent,AllGrow) <[LandRaindrop,Growth,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1689,7 +1689,7 @@
     "Name": "营养液雨水",
     "Level": 5,
     "EffectDescription": "带有雨露字样的植物每收成18次：全局生长+1[还剩1{CountVal:18}次]",
-    "EffectString": "Watch(Harvest,NameContain:雨露) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,18}[AllGrow(1)][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Harvest,NameContain:雨露) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,18}[AllGrow(1)][SelfPendant,CountVal,-18]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1736,8 +1736,8 @@
     "Combo": "Rice",
     "Name": "雨稻",
     "Level": 3,
-    "EffectDescription": "全局生长时,带有稻子字样的植物额外+1生长值",
-    "EffectString": "Watch(GlobalEvent,AllGrow) <[Filter(Land'(Name'Contain'稻子 | Type'Is'Plant)),Growth,1]>",
+    "EffectDescription": "全局生长时,带有稻字样的植物额外+1生长值",
+    "EffectString": "Watch(GlobalEvent,AllGrow) <[LandRice,Growth,1][LandRiceField,Growth,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1748,8 +1748,8 @@
     "Combo": "Rice",
     "Name": "均衡稻子",
     "Level": 2,
-    "EffectDescription": "每打出2次时间值为1的法术牌时,使地里带有稻子字样的植物生长值+1[还剩1{SpecialVal:2}次]",
-    "EffectString": "Watch(Condition,TimeLabel;Equal;1 && Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,2}[Filter(Land'(Name'Contain'稻子 & Type'Is'Plant & Name'NotContain'稻田)),Growth,Operation(GetDataInt(SelfPendant:SpecialVal)/2)][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%2)]>",
+    "EffectDescription": "每打出2次时间值为1的法术牌时,使地里带有稻字样的植物生长值+1[还剩1{SpecialVal:2}次]",
+    "EffectString": "Watch(Condition,TimeLabel;Equal;1 && Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,2}[LandRiceAndRiceField,Growth,Operation(GetDataInt(SelfPendant:SpecialVal)/2)][SelfPendant,SpecialVal,=Operation(GetDataInt(SelfPendant:SpecialVal)%2)]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1761,7 +1761,7 @@
     "Name": "稻子任务一",
     "Level": 1,
     "EffectDescription": "地里的植物收成200次：获得2个|稻子|；销毁自身[还剩1{CountVal:200}次]",
-    "EffectString": "Watch(Harvest,None) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,200}[BagIn(稻子;2)][DestroyPendant()]>",
+    "EffectString": "Watch(Harvest,None) <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,200}[BagIn(稻子;2)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1773,7 +1773,7 @@
     "Name": "稻子任务二",
     "Level": 2,
     "EffectDescription": "回合结束时,如果地里有5个稻子或稻田,获得|稻子专用肥|；销毁自身",
-    "EffectString": "RoundEnd <{Global,Tally(Land'(Name'Contain'稻 & Type'Is'Plant)),BiggerOrEqual,5}[BagIn(稻子专用肥;1)][DestroyPendant()]>",
+    "EffectString": "RoundEnd <{Global,RiceAndRiceFieldNum,BiggerOrEqual,5}[BagIn(稻子专用肥;1)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1785,7 +1785,7 @@
     "Name": "丰收稻子",
     "Level": 4,
     "EffectDescription": "打出时间值≥2的牌时使地里的|稻子|和稻田生长值+1",
-    "EffectString": "Watch(Condition,TimeLabel;BiggerOrEqual;2) <[Filter(Land'(Type'Is'Plant & Name'Contain'稻子)),Growth,2][Filter(Land'(Type'Is'Plant & Name'Contain'稻田)),Growth,1]>",
+    "EffectString": "Watch(Condition,TimeLabel;BiggerOrEqual;2) <[LandRiceAndRiceField,Growth,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1797,7 +1797,7 @@
     "Name": "规范种植稻田",
     "Level": 2,
     "EffectDescription": "地里带有稻子字样的植物每收成100次,获得1个|稻田|[还剩1{CountVal:100}次]",
-    "EffectString": "Watch(Harvest,NameContain:稻子) <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,100}[BagIn(稻田;1)][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Harvest,NameContain:稻子) <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,BiggerOrEqual,100}[BagIn(稻田;1)][SelfPendant,CountVal,-100]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1808,8 +1808,8 @@
     "Combo": "Rice",
     "Name": "靠自己吃饭",
     "Level": 5,
-    "EffectDescription": "地里带有稻子字样的植物每收成8次,全局生长+1[还剩1{CountVal:8}次]",
-    "EffectString": "Watch(Harvest,NameContain:稻子) <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,8}[AllGrow(1)][SelfPendant,CountVal,=0]>",
+    "EffectDescription": "地里带有稻字样的植物每收成10次,获得1张|人工降雨|[还剩1{CountVal:10}次]",
+    "EffectString": "Watch(Harvest,NameContain:稻) <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,BiggerOrEqual,10}[BagIn(人工降雨;1)][SelfPendant,CountVal,-10]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1821,7 +1821,7 @@
     "Name": "黄金稻子",
     "Level": 5,
     "EffectDescription": "回合结束：使地里的稻子/稻田+3生长值",
-    "EffectString": "RoundEnd <[Filter(Land'(Name'Contain'稻子 | Name'Contain'稻田)),Growth,3]>",
+    "EffectString": "RoundEnd <[LandRiceAndRiceField,Growth,3]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1833,7 +1833,7 @@
     "Name": "酸酸法术",
     "Level": 2,
     "EffectDescription": "每打出8张法术牌：打出1张|酸酸叶片|[还剩1{CountVal:8}次]",
-    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,8}[HandIn(酸酸叶片;1)][SelfPendant,CountVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell)  <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,BiggerOrEqual,8}[HandIn(酸酸叶片;1)][SelfPendant,CountVal,-8]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1869,7 +1869,7 @@
     "Name": "法外结晶",
     "Level": 2,
     "EffectDescription": "本回合中每打出6张法术牌：+1临时时间[还剩1{SpecialVal:6}张]",
-    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,Equal,6}[Global,TempTimeLabelLimit,1][SelfPendant,SpecialVal,-6]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[Global,TempTimeLabelLimit,1][SelfPendant,SpecialVal,-6]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1905,7 +1905,7 @@
     "Name": "水晶球",
     "Level": 4,
     "EffectDescription": "本回合中每打出8张法术牌：随机生成1张法术牌到手牌,并使其具有消耗效果[还剩1{SpecialVal:8}张]",
-    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,Equal,8}[HandInCategoryWithResult(Spell;1;SelfCard,EffectString,EConsume)][SelfPendant,SpecialVal,-8]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,8}[HandInCategoryWithResult(Spell;1;SelfCard,EffectString,EConsume)][SelfPendant,SpecialVal,-8]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1917,7 +1917,7 @@
     "Name": "法术手套",
     "Level": 5,
     "EffectDescription": "本回合中每打出7张法术牌：随机将弃牌堆里的一张法术牌放入手牌[已打出1{SpecialVal}张]",
-    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,Equal,7}[DiscardBackHandCondition(Category'Is'Spell;1;;false)][SelfPendant,SpecialVal,=0]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,7}[DiscardBackHandCondition(Category'Is'Spell;1;;false)][SelfPendant,SpecialVal,-7]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -1941,7 +1941,7 @@
     "Name": "国王任务",
     "Level": 2,
     "EffectDescription": "本回合中,打出12张法术牌：获得1个|国王棋盘|,随后销毁自身[还剩1{SpecialVal:12}张]",
-    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,Equal,12}[BagIn(国王棋盘;1)][DestroyPendant()]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,12}[BagIn(国王棋盘;1)][DestroyPendant()]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1953,7 +1953,7 @@
     "Name": "法力堆肥",
     "Level": 2,
     "EffectDescription": "本回合中每打出7张法术牌：随机使1个植物生长+3[还剩1{SpecialVal:7}张]",
-    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,Equal,7}[RandomGrow(3)][SelfPendant,SpecialVal,=0]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,7}[RandomGrow(3)][SelfPendant,SpecialVal,-7]> # RoundEnd <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1965,7 +1965,7 @@
     "Name": "原始徽章",
     "Level": 4,
     "EffectDescription": "本回合中每打出8张法术牌：全局生长+1[还剩1{SpecialVal:8}张]",
-    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,Equal,8}[AllGrow(1)][SelfPendant,SpecialVal,-8]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,8}[AllGrow(1)][SelfPendant,SpecialVal,-8]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -1977,7 +1977,7 @@
     "Name": "骰子",
     "Level": 5,
     "EffectDescription": "本回合中,每打出7张法术牌:将弃牌堆里的牌放入袋子里,并使其时间值临时随机变为[0-2][还剩1{SpecialVal:7}张]",
-    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,Equal,7}[Discard,TempTimeLabel,=RandomInt(0;2)][DiscardBackBagCondition(;99999;;false)][SelfPendant,SpecialVal,-7]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,7}[Discard,TempTimeLabel,=RandomInt(0;2)][DiscardBackBagCondition(;99999;;false)][SelfPendant,SpecialVal,-7]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -2013,7 +2013,7 @@
     "Name": "时间保险",
     "Level": 1,
     "EffectDescription": "时间爆炸时不会扣除<sprite=0>,生效3次后销毁自身[还剩1{CountVal:3}次]",
-    "EffectString": "TimeExplode <{Global,TimeExplodeShield,Equal,0}[Global,TimeExplodeShield,1] [SelfPendant,CountVal,1] > <{SelfPendant,CountVal,Equal,3}[DestroyPendant()]>",
+    "EffectString": "TimeExplode <{Global,TimeExplodeShield,Equal,0}[Global,TimeExplodeShield,1] [SelfPendant,CountVal,1] > <{SelfPendant,CountVal,BiggerOrEqual,3}[DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2060,8 +2060,8 @@
     "Combo": "TimeExplode",
     "Name": "时间管理局任务",
     "Level": 1,
-    "EffectDescription": "时间爆炸60次：获得|时间管理局|,销毁自身[还剩1{CountVal:60}次]",
-    "EffectString": "TimeExplode <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,Equal,60}[BagIn(时间管理局;1)][DestroyPendant()]>",
+    "EffectDescription": "时间爆炸50次：获得|时间管理局|,销毁自身[还剩1{CountVal:50}次]",
+    "EffectString": "TimeExplode <[SelfPendant,CountVal,1]> <{SelfPendant,CountVal,BiggerOrEqual,50}[BagIn(时间管理局;1)][DestroyPendant()]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2073,7 +2073,7 @@
     "Name": "嘣嘣草增益",
     "Level": 2,
     "EffectDescription": "|嘣嘣草|提升收成收益需要的时间爆炸次数-1",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'嘣嘣草)),SpecialVal,-1][Filter(CardCollection'(Name'Is'嘣嘣草 & SpecialVal'Equal'0)),HarvestIncome,1][Filter(CardCollection'(Name'Is'嘣嘣草 & SpecialVal'Equal'0)),SpecialVal,=3][Filter(CardCollection'(Name'Is'嘣嘣草)),EffectPar4,-1]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'TimeExplode-12)),SpecialVal,-1][Filter(CardCollection'(ID'Is'TimeExplode-12 & SpecialVal'Equal'0)),HarvestIncome,1][Filter(CardCollection'(ID'Is'TimeExplode-12 & SpecialVal'Equal'0)),SpecialVal,=2][Filter(CardCollection'(ID'Is'TimeExplode-12)),EffectPar4,-1]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2085,7 +2085,7 @@
     "Name": "嘣嘣草之家",
     "Level": 2,
     "EffectDescription": "时间爆炸：使地里的|嘣嘣草|生长值+2",
-    "EffectString": "TimeExplode <[Filter(Land'(Name'Is'嘣嘣草)),Growth,2]>",
+    "EffectString": "TimeExplode <[Filter(Land'(ID'Is'TimeExplode-12)),Growth,2]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2097,7 +2097,7 @@
     "Name": "小额骗保",
     "Level": 1,
     "EffectDescription": "打出|小额保险|后，下一次抽牌如果时间爆炸：将袋子里时间值最小的法术牌放入手牌",
-    "EffectString": "Gain <[Filter(CardCollection'(Name'Is'小额保险)),EffectString,\"+Play <[NextDrawPredictTimeExplode(DrawMinTimeLabel())]>\"]>",
+    "EffectString": "Gain <[Filter(CardCollection'(ID'Is'StrongGrow-5)),EffectString,\"+Play <[NextDrawPredictTimeExplode(DrawMinTimeLabel())]>\"]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2157,7 +2157,7 @@
     "Name": "莫比乌斯环",
     "Level": 5,
     "EffectDescription": "本回合中,每打出6张法术牌：+3临时时间,-3临时时间[还剩1{SpecialVal:6}张]",
-    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,Equal,6}[Global,TempTimeLabelLimit,3][Global,TempTimeLabelLimit,-3][SelfPendant,SpecialVal,-6]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Watch(Category,Spell) <{SelfPendant,SpecialVal,BiggerOrEqual,6}[Global,TempTimeLabelLimit,3][Global,TempTimeLabelLimit,-3][SelfPendant,SpecialVal,-6]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -2193,7 +2193,7 @@
     "Name": "虫洞",
     "Level": 4,
     "EffectDescription": "回合结束时,若有被保留的临时时间：+3临时时间",
-    "EffectString": "RoundEnd <{Global,RemainTempTimeLabelLimit,Bigger,0 && Global,TempTimeLabelLimit,TempTimeLabelLimit,Bigger,0}[Global,TempTimeLabelLimit,3]>",
+    "EffectString": "RoundEnd <{Global,RemainTempTimeLabelLimit,Bigger,0 && Global,TempTimeLabelLimit,Bigger,0}[Global,TempTimeLabelLimit,3]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2241,7 +2241,7 @@
     "Name": "效率太阳花培植",
     "Level": 3,
     "EffectDescription": "获得1个|太阳花|；每触发1时间值,使太阳花生长值+1",
-    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(太阳花;1)]> # Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <[Filter(Land'(Name'Is'太阳花)),Growth,GetDataInt(SelfPendant:SpecialVal)][SelfPendant,SpecialVal,=0]>",
+    "EffectString": "Gain <{SelfPendant,CountVal,Equal,0}[SelfPendant,CountVal,1][BagIn(太阳花;1)]> # Watch(GlobalNum,ThisRoundActivatedTimeLabelPlus) <[Filter(Land'(ID'Is'Neutral-25)),Growth,GetDataInt(SelfPendant:SpecialVal)][SelfPendant,SpecialVal,=0]>",
     "SpecialVal": 0,
     "CanGainByPack": 1,
     "Introduction": "0"
@@ -2265,7 +2265,7 @@
     "Name": "延时雨",
     "Level": 5,
     "EffectDescription": "全局生长能够获得的生长值额外+1",
-    "EffectString": "Watch(GlobalEvent,AllGrow) <[Filter(Land'(Type'Is'Plant)),Growth,1]>",
+    "EffectString": "Watch(GlobalEvent,AllGrow) <[LandPlant,Growth,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -2324,8 +2324,8 @@
     "Combo": "Event",
     "Name": "荆棘法杖",
     "Level": 5,
-    "EffectDescription": "所有植物的生长周期+1；冬季,卡牌打出效果额外生效1次",
-    "EffectString": "RoundBegin <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,4}[Global,PlayTimes,1][SelfPendant,SpecialVal,=1][SelfPendant,CountVal,=0]> # YearEnd <{SelfPendant,SpecialVal,Equal,1}[Global,PlayTimes,-1][SelfPendant,SpecialVal,=0]>  # Gain <[Filter(CardCollection'(Type'Is'Plant)),GrowPeriod,1]>",
+    "EffectDescription": "所有植物的生长周期+1；秋季,卡牌打出效果额外生效1次",
+    "EffectString": "RoundBegin <[SelfPendant,CountVal,1]><{SelfPendant,CountVal,Equal,3}[Global,PlayTimes,1][SelfPendant,SpecialVal,=1]><{SelfPendant,CountVal,Equal,4}[Global,PlayTimes,-1][SelfPendant,SpecialVal,=0]> # YearEnd <{SelfPendant,SpecialVal,Equal,1}[Global,PlayTimes,-1][SelfPendant,SpecialVal,=0][SelfPendant,CountVal,=0]>  # Gain <[Filter(CardCollection'(Type'Is'Plant)),GrowPeriod,1]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
@@ -2349,7 +2349,7 @@
     "Name": "橙魔法师",
     "Level": 5,
     "EffectDescription": "每打出3张法术牌：打出1张|酸酸叶片|[还剩1{SpecialVal:3}张]",
-    "EffectString": "Watch(Condition,Category;Is;Spell)  <{SelfPendant,SpecialVal,Equal,3}[HandIn(酸酸叶片;1)][SelfPendant,SpecialVal,-3]>",
+    "EffectString": "Watch(Condition,Category;Is;Spell)  <{SelfPendant,SpecialVal,BiggerOrEqual,3}[HandIn(酸酸叶片;1)][SelfPendant,SpecialVal,-3]>",
     "SpecialVal": 0,
     "CanGainByPack": 0,
     "Introduction": "0"
