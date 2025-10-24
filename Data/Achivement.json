@@ -258,5 +258,20 @@
     "ID": "ACH_Postcard",
     "UnlockBySteamStatus": "false",
     "isUnlock": false
+  },
+  {
+    "ID": "ACH_PlantMax",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_AnimalMax",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
+  },
+  {
+    "ID": "ACH_BloodMax",
+    "UnlockBySteamStatus": "false",
+    "isUnlock": false
   }
 ]

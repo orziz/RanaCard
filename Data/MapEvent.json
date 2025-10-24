@@ -1159,11 +1159,11 @@
     "Choices": [
       {
         "Description": "[躺平不干]把初始卡组里的[加班耕种]全部替换成[|躺平不干|]",
-        "Effect": "Transfer(Filter(Deck'(Name'Is'加班耕种));躺平不干) # Exit"
+        "Effect": "Transfer(Filter(Deck'(ID'Is'Blood-17));躺平不干) # Exit"
       },
       {
         "Description": "[防护演习]把初始卡组里的[加班耕种]全部替换成[|防护演习|]",
-        "Effect": "Transfer(Filter(Deck'(Name'Is'加班耕种));防护演习) # Exit"
+        "Effect": "Transfer(Filter(Deck'(ID'Is'Blood-17));防护演习) # Exit"
       },
       {
         "Description": "[加班耕种]拿回|加班耕种|",

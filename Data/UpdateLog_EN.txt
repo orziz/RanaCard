@@ -1,3 +1,54 @@
+V1.3.0
+Additions
+1. Added the option to disable automatic play for cards in hand. Right-click to toggle disable/enable, as shown. When disabled, the card won't be auto-played via the Quick Play gear.
+2. Added the option to disable pendants. Right-click to toggle disable/enable, as shown. When disabled, the pendant's effects are suspended. (Pendants with on-acquire effects or negative impacts cannot be disabled.)
+3. Added hotkeys for Quick Discard and Quick Sell. Hover your mouse over a card in hand to use these shortcuts. Defaults to no keybind; customize in Settings > Controls.
+4. Added batch purchasing for plot expansions. When using a shovel in the shop to expand plots, you can now buy multiple at once.
+5. Added long-press functionality to the difficulty button for continuous switching between difficulties.
+6. Added a counter to the pendant [Power of Orange].
+7. Added the new pendant [Raindrop Blossom Plantation].
+8. Added achievements [Apex Plant], [Apex Animal], and [Apex Orange]. Unlock by clearing the highest difficulty for each class (if already completed, relaunch the game to unlock).
+
+Optimizations
+1. Optimized the screen layout for cards in hand when playing targeted cards.
+2. Improved performance to reduce lag from rapid successive harvest events.
+3. Refined counter descriptions on select cards.
+
+Adjustments
+1. Extended the growth cycle and increased harvest coins for [Colony Moss] and [Colony Moss King].
+2. Boosted the effect values of [Mossy Frog Statue], [Golden Frog Statue], and [Orange Frog Statue].
+3. Slightly shortened the growth cycle for [High-Yield Rice] and [High-Yield Rice Field].
+4. Slightly lowered the number of Milk cards needed to earn coins from the pendant [Strong Milk].
+5. Tweaked the effect of [Milk Grass].
+6. Reduced the harvest count required to activate the pendant [Rice Mission I].
+7. Downgraded the rarity of the pendant [More Rice] to white.
+8. Reduced the harvest count required to activate [Rain Station].
+9. Downgraded the rarity of [Rain Station] to red.
+10. Slightly reduced the harvest count required to activate the pendant [Nutrient-Rich Rain Water].
+11. Slightly increased harvest coins and effects for [Raindrop Matriarch].
+
+¡¤ Fixes
+1. Fixed an issue where cloning certain items with [Cloning Chamber] failed to activate some effects.
+2. Corrected incorrect bonus values after upgrading certain items.
+3. Fixed [Chaos Mushroom] being improperly influenced by [Mushroom Training] effects.
+4. Corrected the effect description for [Sheepdog].
+5. Fixed the Settings > Vertical Sync option not applying correctly.
+6. Fixed mushrooms from [Grandma Mushroom] not benefiting from [Mushroom Training] or [Golden Mushroom].
+7. Fixed [Dragonblood Mushroom] harvests not restoring health when at max HP.
+8. Fixed the [Boom-Boom Cult] achievement not unlocking in English language settings.
+9. Fixed sound effects vanishing during rapid harvest events.
+10. Fixed the [Piece of Cake] achievement not unlocking after earning Cataclysmic Years in multiple saves.
+11. Fixed the tutorial stalling if [Harvest Time] was sold or discarded during the newbie guide.
+12. Fixed certain sound effects ignoring the overall sound volume setting.
+13. Fixed sold-out items still showing prices after buying [Membership Card].
+14. Fixed free items incorrectly becoming paid after buying [Membership Card].
+15. Fixed incorrect categorization of the pendant [Orange Mage] in the compendium.
+16. Fixed the pendant [River of Orange] effect not matching its description.
+17. Fixed [Golden Poop Flower] not applying bonuses to [Golden Poop].
+18. Resolved various other known bugs.
+19. Addressed several localization issues.
+
+
 V1.2.0 Changelog
 Additions
 1.New Plant: [Grandpa Mushroom]
