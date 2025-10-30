@@ -919,7 +919,7 @@
     "Name": "鲜橙之力",
     "Level": 4,
     "EffectDescription": "回合结束：本回合若已打出10张法术牌,将<sprite=0>回满[已打出1{SpecialVal}张]",
-    "EffectString": "RoundEnd <{Global,ThisRoundSpellNum,BiggerOrEqual,10}[Global,Health,Operation(GetDataInt(Global:HealthLimit)-GetDataInt(Global:Health))]>",
+    "EffectString": "RoundEnd <{Global,ThisRoundSpellNum,BiggerOrEqual,10}[Global,Health,Operation(GetDataInt(Global:HealthLimit)-GetDataInt(Global:Health))]> # Watch(GlobalNum,ThisRoundSpellNumPlus) <[SelfPendant,SpecialVal,0]> # RoundBegin <[SelfPendant,SpecialVal,=0]>",
     "ForbidState": 1,
     "CanGainByPack": 0,
     "SpecialVal": 0,
