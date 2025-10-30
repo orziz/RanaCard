@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const API_BASE = (import.meta as any).env?.VITE_API_BASE || 'http://localhost:8000'
+// Prefer same-origin by default. If VITE_API_BASE is set (e.g., "http://backend" or "/"),
+// normalize trailing slashes so that `${API_BASE}/api/...` doesn't double-slash.
+const rawBase = (import.meta as any).env?.VITE_API_BASE as string | undefined
+const API_BASE = rawBase && rawBase.trim() !== '' ? rawBase.replace(/\/+$/, '') : ''
 
 export async function getData(kind: 'card' | 'pendant') {
   // Prefer new /data route; fallback to /baseline for compatibility
