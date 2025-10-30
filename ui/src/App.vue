@@ -5,6 +5,7 @@
       <div class="nav">
         <el-button link @click="$router.push('/cards')">卡牌</el-button>
         <el-button link @click="$router.push('/pendants')">挂件</el-button>
+        <el-button link @click="$router.push('/help/effects')">效果教程</el-button>
       </div>
       <div class="spacer" />
       <div class="version">M1</div>
