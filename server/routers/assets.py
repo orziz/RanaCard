@@ -1,0 +1,146 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+from typing import Any, Dict, List
+
+from fastapi import APIRouter, HTTPException, UploadFile, File, Response
+from pydantic import BaseModel, Field
+
+
+router = APIRouter(prefix="/api", tags=["assets"])
+
+ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = ROOT / "Data"
+
+
+def _load_json(path: Path) -> Dict[str, Any]:
+    if not path.exists():
+        raise HTTPException(status_code=404, detail=f"Not found: {path.name}")
+    with path.open("rb") as f:
+        return json.load(f)
+
+
+@router.get("/baseline/{kind}")
+def get_baseline(kind: str) -> Dict[str, Any]:
+    kind_l = kind.lower()
+    if kind_l == "card":
+        return _load_json(DATA_DIR / "Card.json")
+    if kind_l == "pendant":
+        return _load_json(DATA_DIR / "Pendant.json")
+    raise HTTPException(status_code=400, detail="kind must be 'card' or 'pendant'")
+
+
+@router.get("/data/{kind}")
+def get_data(kind: str) -> Dict[str, Any]:
+    return get_baseline(kind)
+
+
+class ValidateResult(BaseModel):
+    ok: bool
+    errors: List[str] = Field(default_factory=list)
+
+
+@router.post("/validate", response_model=ValidateResult)
+def validate_payload(kind: str, payload: Dict[str, Any]) -> ValidateResult:
+    kind_l = kind.lower()
+    errors: List[str] = []
+
+    if kind_l == "card":
+        root_name = payload.get("Name")
+        cards = payload.get("Cards")
+        if not isinstance(root_name, str):
+            errors.append("Name must be string")
+        if not isinstance(cards, list):
+            errors.append("Cards must be list")
+        else:
+            ids = set()
+            for i, c in enumerate(cards):
+                if not isinstance(c, dict):
+                    errors.append(f"Cards[{i}] must be object")
+                    continue
+                cid = c.get("ID")
+                if not isinstance(cid, str) or not cid:
+                    errors.append(f"Cards[{i}].ID required")
+                elif cid in ids:
+                    errors.append(f"Duplicate ID: {cid}")
+                else:
+                    ids.add(cid)
+                name = c.get("Name")
+                if name is not None and not isinstance(name, str):
+                    errors.append(f"Cards[{i}].Name must be string")
+                level = c.get("Level")
+                if level is not None and not isinstance(level, int):
+                    errors.append(f"Cards[{i}].Level must be int")
+
+    elif kind_l == "pendant":
+        root_name = payload.get("Name")
+        items = payload.get("Pendant")
+        if not isinstance(root_name, str):
+            errors.append("Name must be string")
+        if not isinstance(items, list):
+            errors.append("Pendant must be list")
+        else:
+            ids = set()
+            for i, p in enumerate(items):
+                if not isinstance(p, dict):
+                    errors.append(f"Pendant[{i}] must be object")
+                    continue
+                pid = p.get("ID")
+                if not isinstance(pid, str) or not pid:
+                    errors.append(f"Pendant[{i}].ID required")
+                elif pid in ids:
+                    errors.append(f"Duplicate ID: {pid}")
+                else:
+                    ids.add(pid)
+                name = p.get("Name")
+                if name is not None and not isinstance(name, str):
+                    errors.append(f"Pendant[{i}].Name must be string")
+                level = p.get("Level")
+                if level is not None and not isinstance(level, int):
+                    errors.append(f"Pendant[{i}].Level must be int")
+    else:
+        errors.append("kind must be 'card' or 'pendant'")
+
+    return ValidateResult(ok=len(errors) == 0, errors=errors)
+
+
+# --- Encode/Decode (server-side secrets) ---
+
+
+def _decrypt_text(enc_text: str) -> str:
+    # Local import to keep dependency optional outside server
+    from services.crypto import decrypt_text
+
+    return decrypt_text(enc_text)
+
+
+def _encrypt_text(json_text: str) -> str:
+    from services.crypto import encrypt_text
+
+    return encrypt_text(json_text)
+
+
+@router.post("/decode")
+async def decode_encrypted(file: UploadFile = File(...)) -> Dict[str, Any]:
+    text = (await file.read()).decode("utf-8")
+    try:
+        plain = _decrypt_text(text)
+        data = json.loads(plain)
+        return data
+    except Exception as e:  # noqa: PIE786
+        raise HTTPException(status_code=400, detail=f"解密失败: {e}")
+
+
+class EncodeBody(BaseModel):
+    payload: Dict[str, Any]
+
+
+@router.post("/encode")
+def encode_encrypted(body: EncodeBody) -> Response:
+    try:
+        text = json.dumps(body.payload, ensure_ascii=False)
+        enc = _encrypt_text(text)
+        return Response(content=enc, media_type="text/plain; charset=utf-8")
+    except Exception as e:  # noqa: PIE786
+        raise HTTPException(status_code=400, detail=f"加密失败: {e}")

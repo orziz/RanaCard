@@ -1,0 +1,33 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: server/Dockerfile
+    container_name: zgdg-backend
+    restart: unless-stopped
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./Data:/app/Data:ro
+    expose:
+      - "8000"
+
+  web:
+    build:
+      context: .
+      dockerfile: ui/Dockerfile
+      args:
+        # 让前端以同域访问后端，构建期注入
+        - VITE_API_BASE=/
+    container_name: zgdg-web
+    depends_on:
+      - backend
+    ports:
+      - "127.0.0.1:8080:80"
+    restart: unless-stopped
+
+networks:
+  default:
+    name: zgdg-net
+    driver: bridge

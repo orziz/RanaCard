@@ -1,0 +1,37 @@
+# General
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Node / Frontend
+node_modules/
+ui/node_modules/
+ui/dist/
+ui/.vite/
+ui/.cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+server/.venv/
+
+# IDE / Editor
+.idea/
+.vscode/
+*.code-workspace
+
+# Env files
+.env
+.env.*
+
