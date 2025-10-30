@@ -1,6 +1,13 @@
 <template>
   <div class="dsl-help">
     <el-card>
+      <el-alert type="success" :closable="false" show-icon style="margin-bottom: 12px">
+        <template #title>
+          官方文档已发布：
+          <a href="https://visionfrog.gitbook.io/" target="_blank" rel="noopener">点击前往 GitBook</a>
+          。建议优先查阅，本文作为补充与速查。
+        </template>
+      </el-alert>
       <h2>效果教程：从零到熟练</h2>
 
       <p>
