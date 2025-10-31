@@ -30,7 +30,9 @@ def get_baseline(kind: str) -> Dict[str, Any]:
         return _load_json(DATA_DIR / "Pendant.json")
     if kind_l == "mapevent":
         return _load_json(DATA_DIR / "MapEvent.json")
-    raise HTTPException(status_code=400, detail="kind must be 'card' or 'pendant' or 'mapevent'")
+    if kind_l == "begineffect":
+        return _load_json(DATA_DIR / "BeginEffect.json")
+    raise HTTPException(status_code=400, detail="kind must be 'card' or 'pendant' or 'mapevent' or 'begineffect'")
 
 
 @router.get("/data/{kind}")
@@ -144,8 +146,40 @@ def validate_payload(kind: str, payload: Dict[str, Any]) -> ValidateResult:
                             errors.append(f"[{i}].Choices[{j}].Description must be string")
                         if eff is not None and not isinstance(eff, str):
                             errors.append(f"[{i}].Choices[{j}].Effect must be string")
+    elif kind_l == "begineffect":
+        items = payload if isinstance(payload, list) else None
+        if items is None:
+            errors.append("payload must be an array of begin effects")
+        else:
+            ids = set()
+            for i, it in enumerate(items):
+                if not isinstance(it, dict):
+                    errors.append(f"[{i}] must be object")
+                    continue
+                eid = it.get("ID")
+                if not isinstance(eid, str) or not eid:
+                    errors.append(f"[{i}].ID required")
+                elif eid in ids:
+                    errors.append(f"Duplicate ID: {eid}")
+                else:
+                    ids.add(eid)
+                edesc = it.get("EffectDescription")
+                if edesc is not None and not isinstance(edesc, str):
+                    errors.append(f"[{i}].EffectDescription must be string")
+                estr = it.get("EffectString")
+                if estr is not None and not isinstance(estr, str):
+                    errors.append(f"[{i}].EffectString must be string")
+                unlocked = it.get("UnLocked")
+                if unlocked is not None and not isinstance(unlocked, int):
+                    errors.append(f"[{i}].UnLocked must be int")
+                cond = it.get("UnlockCondition")
+                if cond is not None and not isinstance(cond, str):
+                    errors.append(f"[{i}].UnlockCondition must be string")
+                star = it.get("StarCount")
+                if star is not None and not isinstance(star, int):
+                    errors.append(f"[{i}].StarCount must be int")
     else:
-        errors.append("kind must be 'card' or 'pendant' or 'mapevent'")
+        errors.append("kind must be 'card' or 'pendant' or 'mapevent' or 'begineffect'")
 
     return ValidateResult(ok=len(errors) == 0, errors=errors)
 
@@ -178,7 +212,8 @@ async def decode_encrypted(file: UploadFile = File(...)) -> Dict[str, Any]:
 
 
 class EncodeBody(BaseModel):
-    payload: Dict[str, Any]
+    # Accept dict or list payloads
+    payload: Any
 
 
 @router.post("/encode")
