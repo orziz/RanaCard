@@ -34,3 +34,25 @@ export async function encodeEncrypted(payload: any): Promise<string> {
   const { data } = await axios.post(`${API_BASE}/api/encode`, { payload }, { responseType: 'text' })
   return data
 }
+
+// ---- Share APIs ----
+export type ShareCreateResp = { id: string; url: string; manageToken: string }
+export async function shareCreate(meta: { title: string; author?: string; description?: string; baseDataVersion?: string }, data: { cards?: any; pendants?: any; mapEvents?: any; beginEffects?: any }): Promise<ShareCreateResp> {
+  const { data: resp } = await axios.post(`${API_BASE}/api/share`, { meta, data })
+  return resp
+}
+
+export async function shareList(q?: string, limit = 30): Promise<{ items: Array<{ id: string; title: string; author?: string; createdAt: string; size: number; downloads: number; description?: string; baseDataVersion?: string }> }> {
+  const { data } = await axios.get(`${API_BASE}/api/share`, { params: { q, limit } })
+  return data
+}
+
+export async function shareGet(id: string): Promise<any> {
+  const { data } = await axios.get(`${API_BASE}/api/share/${id}`)
+  return data
+}
+
+export async function shareDelete(id: string, manageToken: string): Promise<{ ok: boolean }> {
+  const { data } = await axios.delete(`${API_BASE}/api/share/${id}`, { params: { manageToken } })
+  return data
+}

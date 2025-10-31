@@ -14,7 +14,7 @@
         <el-button>导入 BeginEffect.json</el-button>
       </el-upload>
       <el-button :disabled="!beginEffects" @click="exportEncrypted">导出 BeginEffect.json</el-button>
-      <el-button :disabled="!beginEffects" @click="runValidate">校验</el-button>
+      <el-button :disabled="!beginEffects" @click="openShare">分享改动</el-button>
       <el-input v-model="keyword" placeholder="搜索 ID/描述/效果" style="max-width: 320px" />
       <el-select v-model="unlockedFilter" clearable placeholder="解锁状态" style="width: 140px">
         <el-option :label="'已解锁'" :value="1" />
@@ -71,13 +71,31 @@
         <div v-for="(e, i) in errors" :key="i">• {{ e }}</div>
       </template>
     </el-alert>
+    
+    <el-dialog v-model="shareVisible" title="分享改动" width="620px">
+      <el-form label-width="100px">
+        <el-form-item label="标题">
+          <el-input v-model="shareTitle" placeholder="例如：开局效果重做/合集" />
+        </el-form-item>
+        <el-form-item label="作者">
+          <el-input v-model="shareAuthor" placeholder="你的名字（可选）" />
+        </el-form-item>
+        <el-form-item label="说明">
+          <el-input v-model="shareDescription" type="textarea" :rows="6" placeholder="详细描述你的改动、思路与使用建议（支持多行）" />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="shareVisible=false">取消</el-button>
+        <el-button type="primary" :disabled="!shareTitle.trim()" @click="doShare">发布</el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed, onMounted, ref } from 'vue'
 import { useDataStore, type BeginEffect } from '../store/data'
-import { decodeEncrypted, encodeEncrypted, getData, validate } from '../api'
+import { decodeEncrypted, encodeEncrypted, getData, validate, shareCreate } from '../api'
 
 const store = useDataStore()
 const beginEffects = computed(() => store.beginEffects)
@@ -96,6 +114,10 @@ const editorVisible = ref(false)
 const jsonMode = ref(false)
 const advancedText = ref('')
 const errors = ref<string[]>([])
+const shareVisible = ref(false)
+const shareTitle = ref('')
+const shareAuthor = ref(localStorage.getItem('share.author') || '')
+const shareDescription = ref('')
 
 const filtered = computed(() => {
   const list = beginEffects.value || []
@@ -147,6 +169,30 @@ async function runValidate() {
   if (!beginEffects.value) return
   const res = await validate('begineffect', beginEffects.value)
   errors.value = res.errors
+}
+
+function openShare() {
+  shareTitle.value = ''
+  shareDescription.value = ''
+  shareVisible.value = true
+}
+
+async function doShare() {
+  if (!beginEffects.value) return
+  const res = await validate('begineffect', beginEffects.value)
+  if (!res.ok) { errors.value = res.errors; return }
+  try {
+    const { id, url, manageToken } = await shareCreate({ title: shareTitle.value, author: shareAuthor.value || undefined, description: shareDescription.value || undefined }, { beginEffects: beginEffects.value })
+    const map = JSON.parse(localStorage.getItem('share.manageTokens') || '{}')
+    map[id] = manageToken
+    localStorage.setItem('share.manageTokens', JSON.stringify(map))
+    if (shareAuthor.value.trim()) localStorage.setItem('share.author', shareAuthor.value.trim())
+    shareVisible.value = false
+    const full = (import.meta as any).env?.VITE_API_BASE ? `${(import.meta as any).env.VITE_API_BASE.replace(/\/+$/, '')}${url}` : url
+    alert('发布成功！\n分享链接：' + full)
+  } catch (e: any) {
+    alert('发布失败：' + (e?.message || '未知错误'))
+  }
 }
 
 function loadAdvanced() {
@@ -211,4 +257,3 @@ function onSave() {
 .empty { opacity: 0.75; padding: 12px; }
 .drawer-toolbar { display:flex; justify-content:flex-end; margin-bottom:8px }
 </style>
-

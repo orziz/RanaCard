@@ -14,7 +14,8 @@
         <el-button>导入 Card.json</el-button>
       </el-upload>
       <el-button :disabled="!cards" @click="exportEncrypted">导出 Card.json</el-button>
-      <el-button :disabled="!cards" @click="runValidate">校验</el-button>
+      
+      <el-button :disabled="!cards" @click="openShare">分享改动</el-button>
       <el-input v-model="keyword" placeholder="搜索 ID/名称/效果" style="max-width: 320px" />
       <el-select v-model="selectedCategory" clearable placeholder="类别" style="width: 140px">
         <el-option v-for="c in categoryOptions" :key="c" :label="c" :value="c" />
@@ -72,13 +73,31 @@
         <div v-for="(e,i) in errors" :key="i">{{ e }}</div>
       </template>
     </el-alert>
+    
+    <el-dialog v-model="shareVisible" title="分享改动" width="620px">
+      <el-form label-width="100px">
+        <el-form-item label="标题">
+          <el-input v-model="shareTitle" placeholder="例如：更强的初始卡组" />
+        </el-form-item>
+        <el-form-item label="作者">
+          <el-input v-model="shareAuthor" placeholder="你的名字（可选）" />
+        </el-form-item>
+        <el-form-item label="说明">
+          <el-input v-model="shareDescription" type="textarea" :rows="6" placeholder="详细描述你的改动、思路与使用建议（支持多行）" />
+        </el-form-item>
+      </el-form>
+      <template #footer>
+        <el-button @click="shareVisible=false">取消</el-button>
+        <el-button type="primary" :disabled="!shareTitle.trim()" @click="doShare">发布</el-button>
+      </template>
+    </el-dialog>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, watch, onMounted } from 'vue'
 import { useDataStore } from '../store/data'
-import { getData, validate, decodeEncrypted, encodeEncrypted } from '../api'
+import { getData, validate, decodeEncrypted, encodeEncrypted, shareCreate } from '../api'
 
 const store = useDataStore()
 const cards = computed(() => store.cards)
@@ -94,6 +113,10 @@ const advancedText = ref('')
 const errors = ref<string[]>([])
 const selectedCategory = ref<string | null>(null)
 const selectedType = ref<string | null>(null)
+const shareVisible = ref(false)
+const shareTitle = ref('')
+const shareAuthor = ref(localStorage.getItem('share.author') || '')
+const shareDescription = ref('')
 
 // 编辑字段与中文标签（仅显示存在差异的字段）
 const cardEditableOrder = [
@@ -171,6 +194,35 @@ async function runValidate() {
   if (!cards.value) return
   const res = await validate('card', cards.value)
   errors.value = res.errors
+}
+
+function openShare() {
+  shareTitle.value = ''
+  shareDescription.value = ''
+  shareVisible.value = true
+}
+
+async function doShare() {
+  if (!cards.value) return
+  // validate first
+  const res = await validate('card', cards.value)
+  if (!res.ok) {
+    errors.value = res.errors
+    return
+  }
+  try {
+    const { id, url, manageToken } = await shareCreate({ title: shareTitle.value, author: shareAuthor.value || undefined, description: shareDescription.value || undefined }, { cards: cards.value })
+    // save token for self-manage
+    const map = JSON.parse(localStorage.getItem('share.manageTokens') || '{}')
+    map[id] = manageToken
+    localStorage.setItem('share.manageTokens', JSON.stringify(map))
+    if (shareAuthor.value.trim()) localStorage.setItem('share.author', shareAuthor.value.trim())
+    shareVisible.value = false
+    const full = (import.meta as any).env?.VITE_API_BASE ? `${(import.meta as any).env.VITE_API_BASE.replace(/\/+$/, '')}${url}` : url
+    alert('发布成功！\n分享链接：' + full + '\n\n提示：管理令牌已保存在本地，可在“社区分享”页面删除该条目。')
+  } catch (e: any) {
+    alert('发布失败：' + (e?.message || '未知错误'))
+  }
 }
 
 function loadAdvanced() {

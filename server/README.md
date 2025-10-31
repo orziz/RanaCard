@@ -23,3 +23,15 @@
    - 前端地址：`http://localhost:8080`
 2. 后端容器名：`zgdg-backend`，前端容器名：`zgdg-web`
 3. `./Data` 会只读挂载到后端容器 `/app/Data`
+
+## 分享改动（极简）
+
+接口（无账号、无审核）：
+
+- `POST /api/share`
+  - Body: `{ meta: { title, author?, description?, baseDataVersion? }, data: { cards?, pendants?, mapEvents?, beginEffects? } }`
+  - 服务端对包含的部分逐项复用 `/api/validate` 校验，保存为 `server/uploads/share/{id}.json`
+  - 返回：`{ id, url, manageToken }`
+- `GET /api/share?q=关键词&limit=30` 列表最近分享（不含敏感字段）
+- `GET /api/share/{id}` 下载原始 JSON（导入即可）
+- `DELETE /api/share/{id}?manageToken=...` 持令牌可删除自己的分享

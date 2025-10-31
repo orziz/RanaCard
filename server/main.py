@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers.assets import router as assets_router
+from routers.share import router as share_router
 
 
 app = FastAPI(title="种呱得呱助手 API", version="0.1.0")
@@ -14,6 +15,7 @@ app.add_middleware(
 )
 
 app.include_router(assets_router)
+app.include_router(share_router)
 
 
 @app.get("/api/health")
