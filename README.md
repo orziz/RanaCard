@@ -46,4 +46,4 @@
 - 代码风格：Python 遵循 PEP 8；前端使用 TypeScript，中文文案保持一致风格
 
 ## 许可证
-本项目以 GPL-3.0 许可证开源，详见根目录 `LICENSE`。
+本项目以 AGPL-3.0 许可证开源，详见根目录 `LICENSE`。
